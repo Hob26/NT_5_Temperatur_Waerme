@@ -14,7 +14,7 @@ Jede Übung ist eine eigene Datei (läuft auch einzeln):
 | `2-6.html` | 2.6 Die Wärmestrahlung |
 | `2-7.html` | 2.7 Drei Wege der Wärme – Teste dich |
 
-Jede Übung hat Reiter: ⭐ Stufe 1 · ⭐⭐ Stufe 2 · ⭐⭐⭐ Profi (und 🎬 Film, falls vorhanden).
+Jede Übung hat Reiter: ✏️ Üben · (🎬 Film) · ❓ Test – am Ende eine kleine Test-Übung zum Inhalt.
 
 Freigabe: Auf der Startseite „🔒 Lehrkraft“ → Code 5555 → Übungen öffnen/sperren → Link/QR an die iPads.
 
