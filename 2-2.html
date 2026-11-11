@@ -131,15 +131,28 @@ h1{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.3rem);letter-spacin
 .lockpage .pill{display:inline-block;text-decoration:none;margin-top:10px}
 @media (max-width:560px){.match{gap:8px}.mitem{font-size:15px;padding:8px}}
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+/* Thermometer exakt ablesbar */
+.thermos{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))!important}
+.th{display:flex;flex-direction:column;align-items:center;gap:6px}
+.th svg{width:170px!important;height:auto!important;max-height:none!important;background:transparent!important;border:0!important}
+.stepper{display:flex!important;flex-direction:column;align-items:center;gap:6px}
+.stepper .v{font-size:1.35rem!important;font-weight:900;min-width:0!important}
+.sbtns{display:flex;gap:6px}
+.sbtns button{min-width:40px;height:42px;border-radius:12px;border:2px solid var(--line);background:var(--card);font-weight:900;font-size:1rem;padding:0 6px}
+.sbtns button:active{background:var(--sel)}
+.thfig{max-width:190px!important}
+.stage .thfig svg{width:170px!important;margin:0 auto;max-height:none}
+.stage .fig.thfig{margin:0 auto}
 </style></head>
 <body data-uebung="2.2"><main class="wrap" id="app"></main>
-<script>window.PAGE = {"no": "2.2", "title": "Die Celsiusskala", "sub": "Fixpunkte, Ablesen, Minusgrade", "book": "S. 38–41", "tile": "fixpunkte", "tasks": [{"type": "thermo", "stars": 1, "q": "Lies die Temperaturen ab.", "values": [20, 37, -5, 12], "lo": -20, "hi": 50, "start": 0, "tip": "Jeder kleine Strich bedeutet 2 °C."}, {"type": "match", "stars": 1, "q": "Die Fixpunkte: Was passiert bei dieser Temperatur?", "left": ["0 °C", "100 °C", "37 °C"], "right": ["Eis schmilzt.", "Wasser siedet (kocht).", "normale Körpertemperatur"]}, {"type": "order", "stars": 2, "q": "So misst du richtig. Bringe die Schritte in die richtige Reihenfolge.", "items": ["Thermometer ganz eintauchen.", "Warten, bis die Anzeige stillsteht.", "Auf Augenhöhe ablesen."]}, {"type": "setthermo", "stars": 2, "q": "Stelle die Thermometer richtig ein.", "targets": [25, -10, 0], "lo": -20, "hi": 50, "tol": 1, "tip": "Unter der 0 sind die Minusgrade."}, {"type": "mc", "stars": 2, "q": "Von wo musst du auf das Thermometer schauen?", "img": "augenhoehe", "opts": [{"t": "von schräg oben"}, {"t": "auf Augenhöhe, also genau von vorne"}, {"t": "von schräg unten"}], "a": 1}, {"type": "mc", "stars": 3, "q": "100 ml kochendes Wasser kühlt ab: 0 s → 96 °C, 60 s → 80 °C, 120 s → 75 °C, 180 s → 70 °C. Was fällt dir auf?", "opts": [{"t": "Es kühlt immer gleich schnell ab."}, {"t": "Am Anfang kühlt es schneller ab, später langsamer."}, {"t": "Es wird wieder wärmer."}], "a": 1, "why": "In der 1. Minute: 16 °C weniger, in der 2. Minute nur noch 5 °C weniger."}, {"type": "mc", "stars": 3, "q": "Ein Fieberthermometer misst von 35 °C bis 42 °C. Kannst du damit die Temperatur im Gefrierfach messen?", "opts": [{"t": "Ja, es misst alles."}, {"t": "Nein, das liegt nicht im Messbereich."}], "a": 1, "why": "Ein Thermometer misst nur in seinem Messbereich."}], "img": {"augenhoehe": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"231.0\" y=\"23\" width=\"38\" height=\"260.8\" rx=\"8\" fill=\"#FFFFFF\" stroke=\"#3B342C\" stroke-width=\"2.5\"/><rect x=\"245.5\" y=\"35\" width=\"9.0\" height=\"210\" rx=\"4.5\" fill=\"#EEF3F6\" stroke=\"#3B342C\" stroke-width=\"2\"/><rect x=\"247.5\" y=\"140.0\" width=\"5.0\" height=\"109.0\" fill=\"#C9553A\"/><circle cx=\"250\" cy=\"255.8\" r=\"11.16\" fill=\"#C9553A\" stroke=\"#3B342C\" stroke-width=\"2.5\"/><line x1=\"256.5\" y1=\"43.0\" x2=\"263.5\" y2=\"43.0\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"256.5\" y1=\"62.4\" x2=\"259.5\" y2=\"62.4\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"256.5\" y1=\"81.8\" x2=\"263.5\" y2=\"81.8\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"256.5\" y1=\"101.2\" x2=\"259.5\" y2=\"101.2\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"256.5\" y1=\"120.6\" x2=\"263.5\" y2=\"120.6\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"256.5\" y1=\"140.0\" x2=\"259.5\" y2=\"140.0\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"256.5\" y1=\"159.4\" x2=\"263.5\" y2=\"159.4\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"256.5\" y1=\"178.8\" x2=\"259.5\" y2=\"178.8\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"256.5\" y1=\"198.2\" x2=\"263.5\" y2=\"198.2\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"256.5\" y1=\"217.6\" x2=\"259.5\" y2=\"217.6\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"256.5\" y1=\"237.0\" x2=\"263.5\" y2=\"237.0\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><path d=\"M40,148 Q90,105 140,148 Q90,190 40,148Z\" fill=\"#FFFFFF\" stroke=\"#3B342C\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"98\" cy=\"148\" r=\"18\" fill=\"#7A5230\" stroke=\"#3B342C\" stroke-width=\"2\"/><circle cx=\"98\" cy=\"148\" r=\"8\" fill=\"#3B342C\" stroke=\"#3B342C\" stroke-width=\"1\"/><circle cx=\"103\" cy=\"143\" r=\"3\" fill=\"#FFFFFF\" stroke=\"#FFFFFF\" stroke-width=\"1\"/><line x1=\"140.0\" y1=\"148.0\" x2=\"238.0\" y2=\"148.0\" stroke=\"#2E7D32\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-dasharray=\"8 6\"/><text x=\"330\" y=\"154\" font-family=\"Nunito, DejaVu Sans, sans-serif\" font-weight=\"700\" font-size=\"46\" fill=\"#2E7D32\" text-anchor=\"middle\">✓<\/text><line x1=\"150.0\" y1=\"70.0\" x2=\"236.0\" y2=\"130.0\" stroke=\"#C9553A\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-dasharray=\"4 6\"/><text x=\"140\" y=\"62\" font-family=\"Nunito, DejaVu Sans, sans-serif\" font-weight=\"700\" font-size=\"32\" fill=\"#C9553A\" text-anchor=\"middle\">✗<\/text><\/svg>"}, "film": null, "color": "#C9553A", "test": [{"type": "mc", "q": "Bei welcher Temperatur schmilzt Eis?", "opts": [{"t": "0 °C"}, {"t": "37 °C"}, {"t": "100 °C"}], "a": 0, "why": ""}, {"type": "mc", "q": "Bei welcher Temperatur siedet Wasser?", "opts": [{"t": "0 °C"}, {"t": "50 °C"}, {"t": "100 °C"}], "a": 2, "why": ""}, {"type": "mc", "q": "Wie liest du ein Thermometer richtig ab?", "opts": [{"t": "von schräg oben"}, {"t": "auf Augenhöhe"}, {"t": "mit geschlossenen Augen"}], "a": 1, "why": ""}, {"type": "mc", "q": "Was bedeutet −5 °C?", "opts": [{"t": "5 Grad über null"}, {"t": "5 Grad unter null"}, {"t": "genau null Grad"}], "a": 1, "why": ""}]};</script>
+<script>window.PAGE = {"no": "2.2", "title": "Die Celsiusskala", "sub": "Fixpunkte, Ablesen, Minusgrade", "book": "S. 38–41", "tasks": [{"type": "match", "img": "fixpunkte_nt", "q": "Anders Celsius hat zwei feste Punkte für seine Skala gewählt. Verbinde.", "left": ["0 °C", "100 °C"], "right": ["Eis schmilzt (Wasser gefriert).", "Wasser siedet (kocht)."]}, {"type": "mc", "th": [13, 0, 20], "q": "Schau dir die Skala genau an. Wie viel Grad bedeutet <b>ein kleiner Strich<\/b>?", "opts": [{"t": "1 °C"}, {"t": "2 °C"}, {"t": "5 °C"}, {"t": "10 °C"}], "a": 0, "tip": "Zähle die Abstände von 0 bis 10.", "why": "Zwischen 0 und 10 liegen 10 kleine Abstände. Also ist ein kleiner Strich 1 °C. Der etwas längere Strich in der Mitte zeigt 5 °C."}, {"type": "thermo", "q": "Lies die Temperaturen genau ab.", "values": [23, 8, 41], "lo": 0, "hi": 50, "tip": "Such die nächste Zahl unter der Säule und zähle die kleinen Striche dazu. Der mittlere lange Strich ist die 5."}, {"type": "mc", "th": [-6, -10, 10], "q": "Unter der 0 beginnen die <b>Minusgrade<\/b>. Welche Temperatur zeigt das Thermometer?", "opts": [{"t": "6 °C"}, {"t": "−6 °C"}, {"t": "−4 °C"}, {"t": "4 °C"}], "a": 1, "tip": "Unter der 0 zählst du nach unten: −1, −2, −3 …", "why": "Die Säule steht 6 kleine Striche unter der 0. Das sind −6 °C."}, {"type": "thermo", "q": "Jetzt mit Minusgraden: Lies genau ab.", "values": [-3, -12, 6], "lo": -20, "hi": 20, "tip": "Unter der 0 zählst du nach unten: −1, −2, −3 …"}, {"type": "setthermo", "q": "Stelle die Thermometer genau ein.", "targets": [18, -7, 0], "lo": -20, "hi": 30, "start": 10}, {"type": "order", "img": "augenhoehe", "q": "So misst du richtig. Bringe die Schritte in die richtige Reihenfolge.", "items": ["Die Kugel des Thermometers ganz ins Wasser tauchen.", "Warten, bis sich die Säule nicht mehr bewegt.", "Auf Augenhöhe ablesen – also genau von vorne.", "Den Wert mit Einheit aufschreiben, z. B. 23 °C."]}], "img": {"fixpunkte_nt": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"180.0\" y=\"16\" width=\"40\" height=\"274.0\" rx=\"8\" fill=\"#FFFFFF\" stroke=\"#3B342C\" stroke-width=\"2.5\"/><rect x=\"195.0\" y=\"28\" width=\"10.0\" height=\"220\" rx=\"5.0\" fill=\"#EEF3F6\" stroke=\"#3B342C\" stroke-width=\"2\"/><rect x=\"197.0\" y=\"138.0\" width=\"6.0\" height=\"114.0\" fill=\"#C9553A\"/><circle cx=\"200\" cy=\"260.0\" r=\"12.4\" fill=\"#C9553A\" stroke=\"#3B342C\" stroke-width=\"2.5\"/><line x1=\"207.0\" y1=\"36.0\" x2=\"214.0\" y2=\"36.0\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"207.0\" y1=\"56.4\" x2=\"210.0\" y2=\"56.4\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"207.0\" y1=\"76.8\" x2=\"214.0\" y2=\"76.8\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"207.0\" y1=\"97.2\" x2=\"210.0\" y2=\"97.2\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"207.0\" y1=\"117.6\" x2=\"214.0\" y2=\"117.6\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"207.0\" y1=\"138.0\" x2=\"210.0\" y2=\"138.0\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"207.0\" y1=\"158.4\" x2=\"214.0\" y2=\"158.4\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"207.0\" y1=\"178.8\" x2=\"210.0\" y2=\"178.8\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"207.0\" y1=\"199.2\" x2=\"214.0\" y2=\"199.2\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"207.0\" y1=\"219.6\" x2=\"210.0\" y2=\"219.6\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"207.0\" y1=\"240.0\" x2=\"214.0\" y2=\"240.0\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><rect x=\"270\" y=\"64.0\" width=\"100\" height=\"56.0\" rx=\"0\" fill=\"#CFE6F7\" stroke=\"none\" stroke-width=\"0\"/><path d=\"M266,40 L270,40 L270,120 L370,120 L370,40 L374,40\" fill=\"none\" stroke=\"#3B342C\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M285,100 l6,-8 l6,8 z\" fill=\"none\" stroke=\"#2F6FB0\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M305,100 l6,-8 l6,8 z\" fill=\"none\" stroke=\"#2F6FB0\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M325,100 l6,-8 l6,8 z\" fill=\"none\" stroke=\"#2F6FB0\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M345,100 l6,-8 l6,8 z\" fill=\"none\" stroke=\"#2F6FB0\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M320,122.4 C308.0,138.0 310.4,150 320,150 C329.6,150 332.0,138.0 320,122.4Z\" fill=\"#E8A33A\" stroke=\"#C9553A\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M320,134.4 C314.6,142.8 315.2,148.8 320,148.8 C324.8,148.8 325.4,142.8 320,134.4Z\" fill=\"#F7C948\" stroke=\"#F7C948\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"290\" cy=\"80\" r=\"4\" fill=\"#FFFFFF\" stroke=\"#2F6FB0\" stroke-width=\"1.5\"/><circle cx=\"315\" cy=\"70\" r=\"4\" fill=\"#FFFFFF\" stroke=\"#2F6FB0\" stroke-width=\"1.5\"/><circle cx=\"340\" cy=\"84\" r=\"4\" fill=\"#FFFFFF\" stroke=\"#2F6FB0\" stroke-width=\"1.5\"/><circle cx=\"300\" cy=\"96\" r=\"4\" fill=\"#FFFFFF\" stroke=\"#2F6FB0\" stroke-width=\"1.5\"/><circle cx=\"330\" cy=\"98\" r=\"4\" fill=\"#FFFFFF\" stroke=\"#2F6FB0\" stroke-width=\"1.5\"/><line x1=\"230.0\" y1=\"46.0\" x2=\"268.0\" y2=\"60.0\" stroke=\"#C9553A\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-dasharray=\"5 5\"/><rect x=\"30\" y=\"190.0\" width=\"100\" height=\"60.0\" rx=\"0\" fill=\"#E6F2FA\" stroke=\"none\" stroke-width=\"0\"/><path d=\"M26,170 L30,170 L30,250 L130,250 L130,170 L134,170\" fill=\"none\" stroke=\"#3B342C\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><rect x=\"45\" y=\"205\" width=\"18\" height=\"16\" rx=\"3\" fill=\"#FFFFFF\" stroke=\"#2F6FB0\" stroke-width=\"2\"/><rect x=\"70\" y=\"195\" width=\"18\" height=\"16\" rx=\"3\" fill=\"#FFFFFF\" stroke=\"#2F6FB0\" stroke-width=\"2\"/><rect x=\"95\" y=\"210\" width=\"18\" height=\"16\" rx=\"3\" fill=\"#FFFFFF\" stroke=\"#2F6FB0\" stroke-width=\"2\"/><rect x=\"60\" y=\"228\" width=\"18\" height=\"16\" rx=\"3\" fill=\"#FFFFFF\" stroke=\"#2F6FB0\" stroke-width=\"2\"/><rect x=\"100\" y=\"232\" width=\"18\" height=\"16\" rx=\"3\" fill=\"#FFFFFF\" stroke=\"#2F6FB0\" stroke-width=\"2\"/><line x1=\"132.0\" y1=\"232.0\" x2=\"172.0\" y2=\"232.0\" stroke=\"#2F6FB0\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-dasharray=\"5 5\"/><\/svg>", "augenhoehe": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"231.0\" y=\"23\" width=\"38\" height=\"260.8\" rx=\"8\" fill=\"#FFFFFF\" stroke=\"#3B342C\" stroke-width=\"2.5\"/><rect x=\"245.5\" y=\"35\" width=\"9.0\" height=\"210\" rx=\"4.5\" fill=\"#EEF3F6\" stroke=\"#3B342C\" stroke-width=\"2\"/><rect x=\"247.5\" y=\"140.0\" width=\"5.0\" height=\"109.0\" fill=\"#C9553A\"/><circle cx=\"250\" cy=\"255.8\" r=\"11.16\" fill=\"#C9553A\" stroke=\"#3B342C\" stroke-width=\"2.5\"/><line x1=\"256.5\" y1=\"43.0\" x2=\"263.5\" y2=\"43.0\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"256.5\" y1=\"62.4\" x2=\"259.5\" y2=\"62.4\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"256.5\" y1=\"81.8\" x2=\"263.5\" y2=\"81.8\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"256.5\" y1=\"101.2\" x2=\"259.5\" y2=\"101.2\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"256.5\" y1=\"120.6\" x2=\"263.5\" y2=\"120.6\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"256.5\" y1=\"140.0\" x2=\"259.5\" y2=\"140.0\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"256.5\" y1=\"159.4\" x2=\"263.5\" y2=\"159.4\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"256.5\" y1=\"178.8\" x2=\"259.5\" y2=\"178.8\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"256.5\" y1=\"198.2\" x2=\"263.5\" y2=\"198.2\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"256.5\" y1=\"217.6\" x2=\"259.5\" y2=\"217.6\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><line x1=\"256.5\" y1=\"237.0\" x2=\"263.5\" y2=\"237.0\" stroke=\"#3B342C\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><path d=\"M40,148 Q90,105 140,148 Q90,190 40,148Z\" fill=\"#FFFFFF\" stroke=\"#3B342C\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"98\" cy=\"148\" r=\"18\" fill=\"#7A5230\" stroke=\"#3B342C\" stroke-width=\"2\"/><circle cx=\"98\" cy=\"148\" r=\"8\" fill=\"#3B342C\" stroke=\"#3B342C\" stroke-width=\"1\"/><circle cx=\"103\" cy=\"143\" r=\"3\" fill=\"#FFFFFF\" stroke=\"#FFFFFF\" stroke-width=\"1\"/><line x1=\"140.0\" y1=\"148.0\" x2=\"238.0\" y2=\"148.0\" stroke=\"#2E7D32\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-dasharray=\"8 6\"/><text x=\"330\" y=\"154\" font-family=\"Nunito, DejaVu Sans, sans-serif\" font-weight=\"700\" font-size=\"46\" fill=\"#2E7D32\" text-anchor=\"middle\">✓<\/text><line x1=\"150.0\" y1=\"70.0\" x2=\"236.0\" y2=\"130.0\" stroke=\"#C9553A\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-dasharray=\"4 6\"/><text x=\"140\" y=\"62\" font-family=\"Nunito, DejaVu Sans, sans-serif\" font-weight=\"700\" font-size=\"32\" fill=\"#C9553A\" text-anchor=\"middle\">✗<\/text><\/svg>"}, "film": null, "color": "#C9553A", "test": [{"type": "thermo", "q": "Lies genau ab.", "values": [27, -9], "lo": -20, "hi": 30}, {"type": "mc", "q": "Wasser kocht. Welche Temperatur zeigt das Thermometer?", "opts": [{"t": "0 °C"}, {"t": "37 °C"}, {"t": "100 °C"}], "a": 2, "why": ""}, {"type": "mc", "q": "Am Morgen sind es −3 °C, am Mittag 5 °C. Um wie viel Grad ist es wärmer geworden?", "opts": [{"t": "2 °C"}, {"t": "5 °C"}, {"t": "8 °C"}], "a": 2, "why": "Von −3 °C bis 0 °C sind es 3 Grad, von 0 °C bis 5 °C noch 5 Grad. Zusammen 8 Grad.", "th": [5, -10, 10]}, {"type": "tf", "q": "Richtig oder falsch?", "items": [["−5 °C ist wärmer als 0 °C.", false], ["Man liest ein Thermometer auf Augenhöhe ab.", true]]}]};</script>
 <script>/* Freigabe der Übungen durch die Lehrkraft.
    Zustand liegt im Gerät (localStorage) und kann per Link/QR an alle iPads verteilt werden:
    index.html?frei=2.1,2.2&t=<Zeitstempel>   (frei=- bedeutet: alles gesperrt)  */
 (function () {
   var ALL = ["2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7"];
-  var KEY = "nt5tw_freigabe", PIN = "5555";
+  var KEY = "nt5tw_freigabe";
+  var PIN = (typeof LEHRERCODE !== "undefined" ? String(LEHRERCODE) : "5555");
   function load() {
     try { var s = JSON.parse(localStorage.getItem(KEY)); if (s && s.open) return s; } catch (e) {}
     return { open: ALL.slice(), t: 0 };            // Standard: alles offen
@@ -210,16 +223,31 @@ h1{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.3rem);letter-spacin
   document.getElementById("pin").addEventListener("keydown", function (e) { if (e.key === "Enter") tryPin(); });
 
   function link() {
-    var base = location.href.split("?")[0].split("#")[0];
+    var base = /^https?:/.test(location.protocol) ? location.href.split("?")[0].split("#")[0]
+             : (typeof ADRESSE !== "undefined" ? ADRESSE : location.href.split("?")[0]);
     return base + "?frei=" + (st.open.length ? st.open.join(",") : "-") + "&t=" + st.t;
   }
+  function qrSvg(text) {
+    try { var q = qrcode(0, "M"); q.addData(text); q.make(); return q.createSvgTag({ cellSize: 6, margin: 2, scalable: true }); }
+    catch (e) { return "<p>QR-Code konnte nicht erzeugt werden.</p>"; }
+  }
+  function openList() { return st.open.length ? st.open.join(" · ") : "keine (alles gesperrt)"; }
   function update() {
     st.t = Date.now(); save(st); paint();
     var l = link(); document.getElementById("tlink").value = l;
-    var qr = document.getElementById("qr"); qr.innerHTML = "";
-    if (window.QRCode) new QRCode(qr, { text: l, width: 220, height: 220, correctLevel: QRCode.CorrectLevel.M });
-    else qr.textContent = "(QR-Code braucht Internet)";
+    document.getElementById("qr").innerHTML = qrSvg(l);
+    document.getElementById("qrinfo").textContent = "Offen: " + openList();
+    var big = document.getElementById("qrbig");
+    if (!big.hidden) showBig();
   }
+  function showBig() {
+    var big = document.getElementById("qrbig");
+    big.querySelector(".qrcode").innerHTML = qrSvg(link());
+    big.querySelector(".qropen").textContent = "Offen: " + openList();
+    big.hidden = false;
+  }
+  document.getElementById("qrshow").onclick = showBig;
+  document.getElementById("qrbig").onclick = function () { this.hidden = true; };
   function buildList() {
     var box = document.getElementById("tlist"); box.innerHTML = "";
     document.querySelectorAll("a.card[data-no]").forEach(function (a) {
@@ -267,31 +295,48 @@ h1{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.3rem);letter-spacin
     } catch (e) {}
   }
 
-  /* ---------- Thermometer-SVG ---------- */
+  /* ---------- Thermometer-SVG: 1 kleiner Strich = 1 °C, mittlerer Strich = 5 °C, Zahl alle 10 °C ---------- */
   function thermoSVG(val, lo, hi, show, col) {
-    col = col || "#C9553A";
-    var top = 20, bot = 250;
-    function y(v) { return bot - (v - lo) / (hi - lo) * (bot - top); }
-    var s = '<svg viewBox="0 0 120 300"><rect x="30" y="5" width="60" height="290" rx="10" fill="#fff" stroke="#3B342C" stroke-width="2"/>' +
-      '<rect x="54" y="' + (top - 6) + '" width="12" height="' + (bot - top + 18) + '" rx="6" fill="#EEF3F6" stroke="#3B342C" stroke-width="1.6"/>';
-    for (var v = lo; v <= hi; v += 2) {
-      var big = v % 10 === 0;
-      s += '<line x1="66" x2="' + (66 + (big ? 12 : 6)) + '" y1="' + y(v) + '" y2="' + y(v) + '" stroke="#3B342C" stroke-width="' + (big ? 1.6 : 1) + '"/>';
-      if (big) s += '<text x="50" y="' + (y(v) + 4) + '" font-size="12" font-weight="700" text-anchor="end" fill="#3B342C">' + String(v).replace("-", "−") + '</text>';
+    col = col || "#C0573E";
+    var ppd = Math.max(5, Math.min(9, 330 / (hi - lo)));       // Pixel pro Grad
+    var top = 34, bot = top + (hi - lo) * ppd, W = 170, H = bot + 62;
+    function y(v) { return (bot - (v - lo) * ppd).toFixed(1); }
+    var s = '<svg viewBox="0 0 ' + W + " " + H + '" width="' + W + '" role="img" aria-label="Thermometer">' +
+      '<rect x="22" y="6" width="126" height="' + (H - 12) + '" rx="14" fill="#fff" stroke="#3F3A34" stroke-width="2"/>' +
+      '<rect x="72" y="' + (top - 12) + '" width="18" height="' + (bot - top + 26) + '" rx="9" fill="#EEF3F6" stroke="#3F3A34" stroke-width="1.8"/>';
+    for (var v = lo; v <= hi; v++) {
+      var ten = v % 10 === 0, five = !ten && v % 5 === 0;
+      var len = ten ? 26 : five ? 17 : 9, sw = ten ? 2.2 : five ? 1.6 : 1;
+      s += '<line x1="92" x2="' + (92 + len) + '" y1="' + y(v) + '" y2="' + y(v) + '" stroke="#3F3A34" stroke-width="' + sw + '"/>';
+      if (ten) s += '<text x="66" y="' + (+y(v) + 5.5) + '" font-size="16" font-weight="800" text-anchor="end" fill="#3F3A34" font-family="Nunito,Arial,sans-serif">' + String(v).replace("-", "−") + "</text>";
     }
+    if (lo < 0 && hi > 0) s += '<line x1="30" x2="70" y1="' + y(0) + '" y2="' + y(0) + '" stroke="#2F6FB0" stroke-width="1.2" stroke-dasharray="3 3"/>';
     var vv = show ? val : lo;
-    s += '<rect class="col" x="57" y="' + y(vv) + '" width="6" height="' + (bot + 14 - y(vv)) + '" fill="' + col + '"/>';
-    s += '<circle cx="60" cy="268" r="12" fill="' + col + '" stroke="#3B342C" stroke-width="1.6"/>';
-    s += '<text x="80" y="18" font-size="12" font-weight="700" fill="#3B342C">°C</text></svg>';
+    s += '<rect x="76" y="' + y(vv) + '" width="10" height="' + (bot + 30 - y(vv)) + '" fill="' + col + '"/>';
+    s += '<circle cx="81" cy="' + (bot + 30) + '" r="17" fill="' + col + '" stroke="#3F3A34" stroke-width="1.8"/>';
+    s += '<text x="124" y="' + (top - 14) + '" font-size="15" font-weight="800" fill="#3F3A34" font-family="Nunito,Arial,sans-serif">°C</text></svg>';
     return s;
+  }
+  function stepper(onChange, isLocked) {
+    var st = el("div", "stepper"); var vEl = el("div", "v", "?"); st.appendChild(vEl);
+    var row = el("div", "sbtns");
+    [[-10, "−10"], [-1, "−1"], [1, "+1"], [10, "+10"]].forEach(function (d) {
+      var b = el("button", "", d[1]); b.type = "button"; b.setAttribute("aria-label", d[1] + " Grad");
+      b.onclick = function () { if (isLocked()) return; onChange(d[0], vEl); }; row.appendChild(b);
+    });
+    st.appendChild(row); return st;
   }
   function fmt(v) { return String(v).replace("-", "−") + " °C"; }
 
   /* ---------- Aufgaben-Renderer ---------- */
   var R = {};
 
+  function fig(t, body) {
+    if (t.th) body.appendChild(el("div", "fig thfig", thermoSVG(t.th[0], t.th[1], t.th[2], true)));
+    else if (t.img) body.appendChild(el("div", "fig", P.img[t.img]));
+  }
   R.mc = function (t, body, api) {
-    if (t.img) body.appendChild(el("div", "fig", P.img[t.img]));
+    fig(t, body);
     var hasImg = t.opts.some(function (o) { return o.img; });
     var box = el("div", "opts" + (hasImg ? " img" : ""));
     var order = shuffle(t.opts.map(function (_, i) { return i; }));
@@ -326,7 +371,7 @@ h1{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.3rem);letter-spacin
   };
 
   R.tf = function (t, body, api) {
-    if (t.img) body.appendChild(el("div", "fig", P.img[t.img]));
+    fig(t, body);
     var box = el("div", "tf"); var ans = []; var rows = [];
     t.items.forEach(function (it, i) {
       var r = el("div", "tfrow"); r.appendChild(el("span", "t", it[0]));
@@ -342,6 +387,7 @@ h1{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.3rem);letter-spacin
   };
 
   R.match = function (t, body, api) {
+    fig(t, body);
     var m = el("div", "match"); var L = el("div", "col"), Rr = el("div", "col");
     var pairs = {}, active = null, n = 0; var lb = [], rb = [];
     t.left.forEach(function (x, i) {
@@ -374,6 +420,7 @@ h1{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.3rem);letter-spacin
   };
 
   R.cloze = function (t, body, api) {
+    fig(t, body);
     var parts = t.text.split(/\{(.+?)\}/); var answers = [], gaps = [], fill = [];
     var p = el("p", "cloze"); var active = null;
     parts.forEach(function (s, i) {
@@ -405,6 +452,7 @@ h1{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.3rem);letter-spacin
   };
 
   R.order = function (t, body, api) {
+    fig(t, body);
     var box = el("div", "olist"); var seq = []; var cards = [];
     body.appendChild(el("p", "sub", "Tippe die Sätze in der richtigen Reihenfolge an."));
     shuffle(t.items.map(function (_, i) { return i; })).forEach(function (i) {
@@ -423,6 +471,7 @@ h1{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.3rem);letter-spacin
   };
 
   R.sort = function (t, body, api) {
+    fig(t, body);
     var pool = el("div", "pool"); var buckets = el("div", "buckets"); var where = {}; var active = null; var chips = [];
     var bEls = t.buckets.map(function (name, bi) {
       var b = el("div", "bucket"); b.appendChild(el("h4", "", name));
@@ -447,32 +496,37 @@ h1{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.3rem);letter-spacin
   R.thermo = function (t, body, api) {
     var lo = t.lo, hi = t.hi; var box = el("div", "thermos"); var vals = [], ths = [];
     t.values.forEach(function (v, i) {
-      var th = el("div", "th", thermoSVG(v, lo, hi, true)); var st = el("div", "stepper");
-      var cur = t.start != null ? t.start : 20; vals[i] = null;
-      var vEl = el("span", "v", "?");
-      var mk = function (d, lab) { var b = el("button", "", lab); b.onclick = function () { if (api.locked()) return; cur = Math.max(lo, Math.min(hi, (vals[i] == null ? cur : vals[i]) + d)); vals[i] = cur; vEl.textContent = fmt(cur); api.ready(vals.every(function (x) { return x != null; })); }; return b; };
-      st.appendChild(mk(-5, "−5")); st.appendChild(mk(-1, "−")); st.appendChild(vEl); st.appendChild(mk(1, "+")); st.appendChild(mk(5, "+5"));
-      th.appendChild(st); ths.push(th); box.appendChild(th);
+      var th = el("div", "th"); th.appendChild(el("div", "badge2", "Thermometer " + String.fromCharCode(65 + i)));
+      th.appendChild(el("div", "", thermoSVG(v, lo, hi, true)));
+      vals[i] = null; var cur = 0;
+      th.appendChild(stepper(function (d, vEl) {
+        cur = Math.max(lo, Math.min(hi, (vals[i] == null ? 0 : cur) + d)); vals[i] = cur; vEl.textContent = fmt(cur);
+        api.ready(vals.every(function (x) { return x != null; }));
+      }, api.locked));
+      ths.push(th); box.appendChild(th);
     });
-    body.appendChild(el("p", "sub", "Stelle mit + und − die abgelesene Temperatur ein.")); body.appendChild(box);
-    api.max = t.values.length;
+    body.appendChild(el("p", "sub", "Lies genau ab: 1 kleiner Strich = 1 °C. Stelle deinen Wert mit den Knöpfen ein (Start bei 0 °C)."));
+    body.appendChild(box); api.max = t.values.length;
     api.check = function () { var p = 0; t.values.forEach(function (v, i) { var ok = vals[i] === v; if (ok) p++; ths[i].classList.add(ok ? "ok" : "bad"); if (!ok) ths[i].appendChild(el("div", "badge2", "richtig: " + fmt(v))); }); return p; };
   };
 
   R.setthermo = function (t, body, api) {
-    var lo = t.lo, hi = t.hi; var wrap = el("div", "setth"); var vals = [], boxes = [];
+    var lo = t.lo, hi = t.hi; var wrap = el("div", "thermos"); var vals = [], boxes = [];
     t.targets.forEach(function (target, i) {
       var th = el("div", "th"); th.appendChild(el("div", "badge2", "Stelle ein: " + fmt(target)));
-      var holder = el("div", "", thermoSVG(lo, lo, hi, true, t.col || "#C9553A")); th.appendChild(holder);
-      var r = el("input"); r.type = "range"; r.min = lo; r.max = hi; r.step = 1; r.value = lo; r.style.width = "140px";
-      var out = el("div", "badge2", fmt(lo));
-      r.oninput = function () { if (api.locked()) return; vals[i] = +r.value; holder.innerHTML = thermoSVG(+r.value, lo, hi, true, t.col); out.textContent = fmt(+r.value); api.ready(vals.filter(function (x) { return x != null; }).length === t.targets.length); };
-      r.setAttribute("aria-label", "Temperatur einstellen");
-      th.appendChild(r); th.appendChild(out); boxes.push(th); wrap.appendChild(th);
+      var cur = t.start != null ? t.start : 10;
+      var holder = el("div", "", thermoSVG(cur, lo, hi, true)); th.appendChild(holder);
+      vals[i] = null;
+      var st = stepper(function (d, vEl) {
+        cur = Math.max(lo, Math.min(hi, cur + d)); vals[i] = cur; holder.innerHTML = thermoSVG(cur, lo, hi, true);
+        api.ready(vals.every(function (x) { return x != null; }));
+      }, api.locked);
+      st.querySelector(".v").hidden = true;
+      th.appendChild(st); boxes.push(th); wrap.appendChild(th);
     });
-    body.appendChild(el("p", "sub", "Ziehe den Regler, bis die rote Säule bei der richtigen Zahl steht.")); body.appendChild(wrap);
-    api.max = t.targets.length;
-    api.check = function () { var p = 0; t.targets.forEach(function (v, i) { var ok = Math.abs((vals[i] == null ? 999 : vals[i]) - v) <= (t.tol || 0); if (ok) p++; boxes[i].classList.add(ok ? "ok" : "bad"); }); return p; };
+    body.appendChild(el("p", "sub", "Bewege die rote Säule mit den Knöpfen genau auf die richtige Zahl."));
+    body.appendChild(wrap); api.max = t.targets.length;
+    api.check = function () { var p = 0; t.targets.forEach(function (v, i) { var ok = vals[i] === v; if (ok) p++; boxes[i].classList.add(ok ? "ok" : "bad"); if (!ok) boxes[i].appendChild(el("div", "badge2", "richtig: " + fmt(v))); }); return p; };
   };
 
   /* Teilchen-Simulation (ohne Punkte) */
@@ -577,14 +631,10 @@ h1{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.3rem);letter-spacin
     function showRes() {
       var pct = total ? got / total : 1;
       var suns = pct >= .9 ? 3 : pct >= .6 ? 2 : pct >= .3 ? 1 : 0;
-      var nm = store.get("nt5tw_name") || "";
       score.hidden = true; res.hidden = false;
       res.innerHTML = '<div class="kicker">Geschafft · ' + label.replace(/^\S+\s/, "") + '</div><div class="sun">' + "☀️".repeat(suns) + "🌥️".repeat(3 - suns) + '</div><div class="big">' + got + " / " + total + " Punkte</div>" +
-        '<p><input class="nm" placeholder="Dein Vorname" value="' + nm.replace(/"/g, "") + '"> · ' + P.no + " " + label.replace(/^\S+\s/, "") + " · " + new Date().toLocaleDateString("de-DE") + "</p>" +
-        "<p>Mach einen Screenshot und zeige ihn deiner Lehrkraft.</p>" +
         '<div class="row"><button class="btn" type="button" onclick="location.reload()">Nochmal üben</button>' +
         (nextLabel ? '<button class="btn ghost nx" type="button">Weiter: ' + nextLabel + " ➜</button>" : "") + "</div>";
-      var inp = res.querySelector(".nm"); inp.oninput = function () { store.set("nt5tw_name", inp.value); };
       var nx = res.querySelector(".nx"); if (nx) nx.onclick = function () { secs[myTab + 1][0].click(); };
       var k2 = isTest ? "test" : "ueben"; var b = state[k2] || 0; if (got >= b) { state[k2] = got; state[k2 + "_t"] = total; store.set(key, state); }
     }

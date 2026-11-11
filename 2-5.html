@@ -131,15 +131,28 @@ h1{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.3rem);letter-spacin
 .lockpage .pill{display:inline-block;text-decoration:none;margin-top:10px}
 @media (max-width:560px){.match{gap:8px}.mitem{font-size:15px;padding:8px}}
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+/* Thermometer exakt ablesbar */
+.thermos{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))!important}
+.th{display:flex;flex-direction:column;align-items:center;gap:6px}
+.th svg{width:170px!important;height:auto!important;max-height:none!important;background:transparent!important;border:0!important}
+.stepper{display:flex!important;flex-direction:column;align-items:center;gap:6px}
+.stepper .v{font-size:1.35rem!important;font-weight:900;min-width:0!important}
+.sbtns{display:flex;gap:6px}
+.sbtns button{min-width:40px;height:42px;border-radius:12px;border:2px solid var(--line);background:var(--card);font-weight:900;font-size:1rem;padding:0 6px}
+.sbtns button:active{background:var(--sel)}
+.thfig{max-width:190px!important}
+.stage .thfig svg{width:170px!important;margin:0 auto;max-height:none}
+.stage .fig.thfig{margin:0 auto}
 </style></head>
 <body data-uebung="2.5"><main class="wrap" id="app"></main>
-<script>window.PAGE = {"no": "2.5", "title": "Die Wärmeströmung", "sub": "Wasser und Luft nehmen Wärme mit", "book": "S. 50–51", "tile": "zimmer", "tasks": [{"type": "mc", "stars": 1, "q": "Wohin strömt die warme Luft über dem Heizkörper?", "img": "zimmer", "opts": [{"t": "nach oben"}, {"t": "nach unten"}, {"t": "Sie bleibt stehen."}], "a": 0}, {"type": "cloze", "stars": 1, "q": "Ergänze.", "text": "Warme Luft {steigt} nach oben. Kühle Luft {sinkt} nach unten. Strömendes {Wasser} oder strömende Luft nimmt Wärme mit.", "extra": ["Holz", "bleibt"]}, {"type": "order", "stars": 2, "q": "Wie funktioniert die Heizung?", "items": ["Im Brenner verbrennt Öl oder Gas.", "Das Wasser wird im Kessel erhitzt.", "Die Pumpe pumpt heißes Wasser zum Heizkörper.", "Der Heizkörper gibt Wärme ans Zimmer ab.", "Das Wasser kühlt ab und strömt zurück zum Kessel."]}, {"type": "match", "stars": 2, "q": "Was strömt hier und nimmt Wärme mit?", "left": ["Weihnachtspyramide", "Heißluftballon", "Heizung im Haus", "Schokobrunnen"], "right": ["warme Luft über den Kerzen", "warme Luft im Ballon", "heißes Wasser in Rohren", "flüssige Schokolade"]}, {"type": "mc", "stars": 3, "q": "Tareks Gardine über der Heizung bewegt sich. Fenster und Tür sind zu. Warum?", "opts": [{"t": "Es spukt."}, {"t": "Die warme Luft steigt von der Heizung auf und bewegt die Gardine."}, {"t": "Die Heizung bläst wie ein Föhn."}], "a": 1}], "img": {"zimmer": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M30,30 L370,30 L370,270 L30,270 Z\" fill=\"#FFFDF6\" stroke=\"#3B342C\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><rect x=\"45\" y=\"180\" width=\"70\" height=\"75\" rx=\"4\" fill=\"#FFFFFF\" stroke=\"#3B342C\" stroke-width=\"3\"/><line x1=\"52.0\" y1=\"186.0\" x2=\"52.0\" y2=\"249.0\" stroke=\"#3B342C\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"62.0\" y1=\"186.0\" x2=\"62.0\" y2=\"249.0\" stroke=\"#3B342C\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"72.0\" y1=\"186.0\" x2=\"72.0\" y2=\"249.0\" stroke=\"#3B342C\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"82.0\" y1=\"186.0\" x2=\"82.0\" y2=\"249.0\" stroke=\"#3B342C\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"92.0\" y1=\"186.0\" x2=\"92.0\" y2=\"249.0\" stroke=\"#3B342C\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"102.0\" y1=\"186.0\" x2=\"102.0\" y2=\"249.0\" stroke=\"#3B342C\" stroke-width=\"2\" stroke-linecap=\"round\"/><rect x=\"250\" y=\"95\" width=\"80\" height=\"70\" rx=\"0\" fill=\"#D6EAF6\" stroke=\"#3B342C\" stroke-width=\"3\"/><line x1=\"290.0\" y1=\"95.0\" x2=\"290.0\" y2=\"165.0\" stroke=\"#3B342C\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"250.0\" y1=\"130.0\" x2=\"330.0\" y2=\"130.0\" stroke=\"#3B342C\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M80,170 C70,120 70,60 120,50 L300,50 C340,52 355,90 345,160\" fill=\"none\" stroke=\"#E4573D\" stroke-width=\"6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polygon points=\"347,175 336,155 356,158\" fill=\"#5B9BD5\"/><path d=\"M345,175 C340,230 300,250 240,252 L135,252\" fill=\"none\" stroke=\"#5B9BD5\" stroke-width=\"6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polygon points=\"120,252 138,242 138,262\" fill=\"#5B9BD5\"/><polygon points=\"122,46 104,40 108,60\" fill=\"#E4573D\"/><text x=\"165\" y=\"85\" font-family=\"Nunito, DejaVu Sans, sans-serif\" font-weight=\"700\" font-size=\"18\" fill=\"#C9553A\" text-anchor=\"middle\">warme Luft steigt<\/text><text x=\"230\" y=\"230\" font-family=\"Nunito, DejaVu Sans, sans-serif\" font-weight=\"700\" font-size=\"18\" fill=\"#2F6FB0\" text-anchor=\"middle\">kühle Luft sinkt<\/text><\/svg>"}, "film": {"t": "Antrieb durch Körperwärme", "url": "https://www.planet-schule.de/schwerpunkt/achtung-experiment/antrieb-durch-koerperwaerme-film-100.html", "d": "Können 50 Menschen mit ihrer Körperwärme 256 Papierwindräder drehen? Warme Luft steigt nach oben!"}, "color": "#2E7D32", "test": [{"type": "mc", "q": "Wohin strömt warme Luft?", "opts": [{"t": "nach oben"}, {"t": "nach unten"}, {"t": "zur Seite"}], "a": 0, "why": ""}, {"type": "mc", "q": "Was nimmt bei der Wärmeströmung die Wärme mit?", "opts": [{"t": "ein Metallstab"}, {"t": "strömendes Wasser oder strömende Luft"}, {"t": "das Licht"}], "a": 1, "why": ""}, {"type": "mc", "q": "Was strömt in der Heizung durch die Rohre?", "opts": [{"t": "heißes Wasser"}, {"t": "kalte Luft"}, {"t": "Strom"}], "a": 0, "why": ""}, {"type": "mc", "q": "Warum steigt ein Heißluftballon?", "opts": [{"t": "Die warme Luft im Ballon steigt nach oben."}, {"t": "Der Wind drückt ihn hoch."}, {"t": "Er ist aus Metall."}], "a": 0, "why": ""}]};</script>
+<script>window.PAGE = {"no": "2.5", "title": "Die Wärmeströmung", "sub": "Wasser und Luft nehmen Wärme mit", "book": "S. 50–51", "tasks": [{"type": "mc", "q": "Über dem Heizkörper wird die Luft warm. Wohin strömt die warme Luft?", "opts": [{"t": "nach oben"}, {"t": "nach unten"}, {"t": "Sie bleibt beim Heizkörper."}], "a": 0}, {"type": "mc", "q": "Wo ist es im geheizten Zimmer am wärmsten?", "opts": [{"t": "oben unter der Decke"}, {"t": "unten am Boden"}, {"t": "überall gleich"}], "a": 0, "why": "Warme Luft steigt nach oben und sammelt sich unter der Decke."}, {"type": "order", "img": "zimmer_nt", "q": "So entsteht im Zimmer ein Luftkreislauf. Bringe die Schritte in die richtige Reihenfolge.", "items": ["Die Luft am Heizkörper wird warm.", "Die warme Luft steigt nach oben.", "Oben an der Decke kühlt sie ab.", "Die kühle Luft sinkt nach unten und strömt zurück zum Heizkörper."]}, {"type": "cloze", "q": "Ergänze den Merksatz.", "text": "Warme Luft {steigt} nach oben, kühle Luft {sinkt} nach unten. Strömende Luft oder strömendes {Wasser} nimmt die Wärme mit. Das nennt man {Wärmeströmung}.", "extra": ["Wärmeleitung", "Holz", "bleibt"]}, {"type": "order", "img": "heizung", "q": "Die Zentralheizung: Hier strömt heißes Wasser. Bringe die Schritte in die richtige Reihenfolge.", "items": ["Im Heizkessel wird Wasser erhitzt.", "Die Pumpe drückt das heiße Wasser durch Rohre zum Heizkörper.", "Der Heizkörper gibt Wärme an das Zimmer ab.", "Das abgekühlte Wasser strömt zurück zum Heizkessel."]}, {"type": "match", "q": "Was strömt hier und nimmt die Wärme mit? Verbinde.", "left": ["Weihnachtspyramide", "Heißluftballon", "Zentralheizung"], "right": ["warme Luft über den Kerzen", "heiße Luft im Ballon", "heißes Wasser in den Rohren"]}, {"type": "mc", "q": "Tareks Gardine über der Heizung bewegt sich, obwohl Fenster und Tür zu sind. Warum?", "opts": [{"t": "Warme Luft steigt von der Heizung auf und bewegt die Gardine."}, {"t": "Die Heizung bläst wie ein Föhn."}, {"t": "Die Gardine wird von der Wärme leichter."}], "a": 0}], "img": {"heizung": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"30\" y=\"150\" width=\"90\" height=\"110\" rx=\"6\" fill=\"#E9E4DA\" stroke=\"#3B342C\" stroke-width=\"3\"/><rect x=\"45\" y=\"200\" width=\"60\" height=\"40\" rx=\"4\" fill=\"#455A64\" stroke=\"#3B342C\" stroke-width=\"2\"/><path d=\"M75,205.8 C61.0,224.0 63.8,238 75,238 C86.2,238 89.0,224.0 75,205.8Z\" fill=\"#E8A33A\" stroke=\"#C9553A\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M75,219.8 C68.7,229.6 69.4,236.6 75,236.6 C80.6,236.6 81.3,229.6 75,219.8Z\" fill=\"#F7C948\" stroke=\"#F7C948\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><rect x=\"250\" y=\"40\" width=\"120\" height=\"90\" rx=\"6\" fill=\"#FFFFFF\" stroke=\"#3B342C\" stroke-width=\"3\"/><line x1=\"262.0\" y1=\"46.0\" x2=\"262.0\" y2=\"124.0\" stroke=\"#3B342C\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"276.0\" y1=\"46.0\" x2=\"276.0\" y2=\"124.0\" stroke=\"#3B342C\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"290.0\" y1=\"46.0\" x2=\"290.0\" y2=\"124.0\" stroke=\"#3B342C\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"304.0\" y1=\"46.0\" x2=\"304.0\" y2=\"124.0\" stroke=\"#3B342C\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"318.0\" y1=\"46.0\" x2=\"318.0\" y2=\"124.0\" stroke=\"#3B342C\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"332.0\" y1=\"46.0\" x2=\"332.0\" y2=\"124.0\" stroke=\"#3B342C\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"346.0\" y1=\"46.0\" x2=\"346.0\" y2=\"124.0\" stroke=\"#3B342C\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"360.0\" y1=\"46.0\" x2=\"360.0\" y2=\"124.0\" stroke=\"#3B342C\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M75,150 L75,85 L250,85\" fill=\"none\" stroke=\"#E4573D\" stroke-width=\"7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M370,110 L390,110 L390,250 L120,250\" fill=\"none\" stroke=\"#5B9BD5\" stroke-width=\"7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polygon points=\"248,85 232,76 232,94\" fill=\"#E4573D\"/><polygon points=\"122,250 138,241 138,259\" fill=\"#5B9BD5\"/><circle cx=\"255\" cy=\"250\" r=\"16\" fill=\"#FFFFFF\" stroke=\"#3B342C\" stroke-width=\"3\"/><path d=\"M247,250 l14,-8 l0,16 z\" fill=\"#3B342C\" stroke=\"#3B342C\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"75\" y=\"283\" font-family=\"Nunito, DejaVu Sans, sans-serif\" font-weight=\"700\" font-size=\"16\" fill=\"#3B342C\" text-anchor=\"middle\">Kessel<\/text><text x=\"310\" y=\"150\" font-family=\"Nunito, DejaVu Sans, sans-serif\" font-weight=\"700\" font-size=\"16\" fill=\"#3B342C\" text-anchor=\"middle\">Heizkörper<\/text><text x=\"255\" y=\"285\" font-family=\"Nunito, DejaVu Sans, sans-serif\" font-weight=\"700\" font-size=\"16\" fill=\"#3B342C\" text-anchor=\"middle\">Pumpe<\/text><text x=\"160\" y=\"75\" font-family=\"Nunito, DejaVu Sans, sans-serif\" font-weight=\"700\" font-size=\"15\" fill=\"#C9553A\" text-anchor=\"middle\">heißes Wasser<\/text><text x=\"330\" y=\"240\" font-family=\"Nunito, DejaVu Sans, sans-serif\" font-weight=\"700\" font-size=\"15\" fill=\"#2F6FB0\" text-anchor=\"middle\">kaltes Wasser<\/text><\/svg>", "zimmer_nt": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M30,30 L370,30 L370,270 L30,270 Z\" fill=\"#FFFDF6\" stroke=\"#3B342C\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><rect x=\"45\" y=\"180\" width=\"70\" height=\"75\" rx=\"4\" fill=\"#FFFFFF\" stroke=\"#3B342C\" stroke-width=\"3\"/><line x1=\"52.0\" y1=\"186.0\" x2=\"52.0\" y2=\"249.0\" stroke=\"#3B342C\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"62.0\" y1=\"186.0\" x2=\"62.0\" y2=\"249.0\" stroke=\"#3B342C\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"72.0\" y1=\"186.0\" x2=\"72.0\" y2=\"249.0\" stroke=\"#3B342C\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"82.0\" y1=\"186.0\" x2=\"82.0\" y2=\"249.0\" stroke=\"#3B342C\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"92.0\" y1=\"186.0\" x2=\"92.0\" y2=\"249.0\" stroke=\"#3B342C\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"102.0\" y1=\"186.0\" x2=\"102.0\" y2=\"249.0\" stroke=\"#3B342C\" stroke-width=\"2\" stroke-linecap=\"round\"/><rect x=\"250\" y=\"95\" width=\"80\" height=\"70\" rx=\"0\" fill=\"#D6EAF6\" stroke=\"#3B342C\" stroke-width=\"3\"/><line x1=\"290.0\" y1=\"95.0\" x2=\"290.0\" y2=\"165.0\" stroke=\"#3B342C\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"250.0\" y1=\"130.0\" x2=\"330.0\" y2=\"130.0\" stroke=\"#3B342C\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M80,170 C70,120 70,60 120,50 L300,50 C340,52 355,90 345,160\" fill=\"none\" stroke=\"#E4573D\" stroke-width=\"6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polygon points=\"347,175 336,155 356,158\" fill=\"#5B9BD5\"/><path d=\"M345,175 C340,230 300,250 240,252 L135,252\" fill=\"none\" stroke=\"#5B9BD5\" stroke-width=\"6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polygon points=\"120,252 138,242 138,262\" fill=\"#5B9BD5\"/><polygon points=\"122,46 104,40 108,60\" fill=\"#E4573D\"/><\/svg>"}, "film": {"t": "Antrieb durch Körperwärme", "url": "https://www.planet-schule.de/schwerpunkt/achtung-experiment/antrieb-durch-koerperwaerme-film-100.html", "d": "Können 50 Menschen mit ihrer Körperwärme 256 Papierwindräder drehen? Warme Luft steigt nach oben!"}, "color": "#2E7D32", "test": [{"type": "mc", "q": "Im Dachgeschoss ist es oft am wärmsten. Warum?", "opts": [{"t": "Warme Luft steigt nach oben."}, {"t": "Das Dach leitet die Kälte weg."}, {"t": "Oben ist mehr Luft."}], "a": 0, "why": ""}, {"type": "mc", "q": "Was transportiert bei der Wärmeströmung die Wärme?", "opts": [{"t": "strömende Luft oder strömendes Wasser"}, {"t": "ein Löffel aus Metall"}, {"t": "das Sonnenlicht"}], "a": 0, "why": ""}, {"type": "tf", "q": "Richtig oder falsch?", "items": [["Kalte Luft steigt nach oben.", false], ["In der Zentralheizung strömt heißes Wasser zum Heizkörper.", true], ["Wenn ein Löffel im Tee heiß wird, ist das Wärmeströmung.", false]]}]};</script>
 <script>/* Freigabe der Übungen durch die Lehrkraft.
    Zustand liegt im Gerät (localStorage) und kann per Link/QR an alle iPads verteilt werden:
    index.html?frei=2.1,2.2&t=<Zeitstempel>   (frei=- bedeutet: alles gesperrt)  */
 (function () {
   var ALL = ["2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7"];
-  var KEY = "nt5tw_freigabe", PIN = "5555";
+  var KEY = "nt5tw_freigabe";
+  var PIN = (typeof LEHRERCODE !== "undefined" ? String(LEHRERCODE) : "5555");
   function load() {
     try { var s = JSON.parse(localStorage.getItem(KEY)); if (s && s.open) return s; } catch (e) {}
     return { open: ALL.slice(), t: 0 };            // Standard: alles offen
@@ -210,16 +223,31 @@ h1{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.3rem);letter-spacin
   document.getElementById("pin").addEventListener("keydown", function (e) { if (e.key === "Enter") tryPin(); });
 
   function link() {
-    var base = location.href.split("?")[0].split("#")[0];
+    var base = /^https?:/.test(location.protocol) ? location.href.split("?")[0].split("#")[0]
+             : (typeof ADRESSE !== "undefined" ? ADRESSE : location.href.split("?")[0]);
     return base + "?frei=" + (st.open.length ? st.open.join(",") : "-") + "&t=" + st.t;
   }
+  function qrSvg(text) {
+    try { var q = qrcode(0, "M"); q.addData(text); q.make(); return q.createSvgTag({ cellSize: 6, margin: 2, scalable: true }); }
+    catch (e) { return "<p>QR-Code konnte nicht erzeugt werden.</p>"; }
+  }
+  function openList() { return st.open.length ? st.open.join(" · ") : "keine (alles gesperrt)"; }
   function update() {
     st.t = Date.now(); save(st); paint();
     var l = link(); document.getElementById("tlink").value = l;
-    var qr = document.getElementById("qr"); qr.innerHTML = "";
-    if (window.QRCode) new QRCode(qr, { text: l, width: 220, height: 220, correctLevel: QRCode.CorrectLevel.M });
-    else qr.textContent = "(QR-Code braucht Internet)";
+    document.getElementById("qr").innerHTML = qrSvg(l);
+    document.getElementById("qrinfo").textContent = "Offen: " + openList();
+    var big = document.getElementById("qrbig");
+    if (!big.hidden) showBig();
   }
+  function showBig() {
+    var big = document.getElementById("qrbig");
+    big.querySelector(".qrcode").innerHTML = qrSvg(link());
+    big.querySelector(".qropen").textContent = "Offen: " + openList();
+    big.hidden = false;
+  }
+  document.getElementById("qrshow").onclick = showBig;
+  document.getElementById("qrbig").onclick = function () { this.hidden = true; };
   function buildList() {
     var box = document.getElementById("tlist"); box.innerHTML = "";
     document.querySelectorAll("a.card[data-no]").forEach(function (a) {
@@ -267,31 +295,48 @@ h1{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.3rem);letter-spacin
     } catch (e) {}
   }
 
-  /* ---------- Thermometer-SVG ---------- */
+  /* ---------- Thermometer-SVG: 1 kleiner Strich = 1 °C, mittlerer Strich = 5 °C, Zahl alle 10 °C ---------- */
   function thermoSVG(val, lo, hi, show, col) {
-    col = col || "#C9553A";
-    var top = 20, bot = 250;
-    function y(v) { return bot - (v - lo) / (hi - lo) * (bot - top); }
-    var s = '<svg viewBox="0 0 120 300"><rect x="30" y="5" width="60" height="290" rx="10" fill="#fff" stroke="#3B342C" stroke-width="2"/>' +
-      '<rect x="54" y="' + (top - 6) + '" width="12" height="' + (bot - top + 18) + '" rx="6" fill="#EEF3F6" stroke="#3B342C" stroke-width="1.6"/>';
-    for (var v = lo; v <= hi; v += 2) {
-      var big = v % 10 === 0;
-      s += '<line x1="66" x2="' + (66 + (big ? 12 : 6)) + '" y1="' + y(v) + '" y2="' + y(v) + '" stroke="#3B342C" stroke-width="' + (big ? 1.6 : 1) + '"/>';
-      if (big) s += '<text x="50" y="' + (y(v) + 4) + '" font-size="12" font-weight="700" text-anchor="end" fill="#3B342C">' + String(v).replace("-", "−") + '</text>';
+    col = col || "#C0573E";
+    var ppd = Math.max(5, Math.min(9, 330 / (hi - lo)));       // Pixel pro Grad
+    var top = 34, bot = top + (hi - lo) * ppd, W = 170, H = bot + 62;
+    function y(v) { return (bot - (v - lo) * ppd).toFixed(1); }
+    var s = '<svg viewBox="0 0 ' + W + " " + H + '" width="' + W + '" role="img" aria-label="Thermometer">' +
+      '<rect x="22" y="6" width="126" height="' + (H - 12) + '" rx="14" fill="#fff" stroke="#3F3A34" stroke-width="2"/>' +
+      '<rect x="72" y="' + (top - 12) + '" width="18" height="' + (bot - top + 26) + '" rx="9" fill="#EEF3F6" stroke="#3F3A34" stroke-width="1.8"/>';
+    for (var v = lo; v <= hi; v++) {
+      var ten = v % 10 === 0, five = !ten && v % 5 === 0;
+      var len = ten ? 26 : five ? 17 : 9, sw = ten ? 2.2 : five ? 1.6 : 1;
+      s += '<line x1="92" x2="' + (92 + len) + '" y1="' + y(v) + '" y2="' + y(v) + '" stroke="#3F3A34" stroke-width="' + sw + '"/>';
+      if (ten) s += '<text x="66" y="' + (+y(v) + 5.5) + '" font-size="16" font-weight="800" text-anchor="end" fill="#3F3A34" font-family="Nunito,Arial,sans-serif">' + String(v).replace("-", "−") + "</text>";
     }
+    if (lo < 0 && hi > 0) s += '<line x1="30" x2="70" y1="' + y(0) + '" y2="' + y(0) + '" stroke="#2F6FB0" stroke-width="1.2" stroke-dasharray="3 3"/>';
     var vv = show ? val : lo;
-    s += '<rect class="col" x="57" y="' + y(vv) + '" width="6" height="' + (bot + 14 - y(vv)) + '" fill="' + col + '"/>';
-    s += '<circle cx="60" cy="268" r="12" fill="' + col + '" stroke="#3B342C" stroke-width="1.6"/>';
-    s += '<text x="80" y="18" font-size="12" font-weight="700" fill="#3B342C">°C</text></svg>';
+    s += '<rect x="76" y="' + y(vv) + '" width="10" height="' + (bot + 30 - y(vv)) + '" fill="' + col + '"/>';
+    s += '<circle cx="81" cy="' + (bot + 30) + '" r="17" fill="' + col + '" stroke="#3F3A34" stroke-width="1.8"/>';
+    s += '<text x="124" y="' + (top - 14) + '" font-size="15" font-weight="800" fill="#3F3A34" font-family="Nunito,Arial,sans-serif">°C</text></svg>';
     return s;
+  }
+  function stepper(onChange, isLocked) {
+    var st = el("div", "stepper"); var vEl = el("div", "v", "?"); st.appendChild(vEl);
+    var row = el("div", "sbtns");
+    [[-10, "−10"], [-1, "−1"], [1, "+1"], [10, "+10"]].forEach(function (d) {
+      var b = el("button", "", d[1]); b.type = "button"; b.setAttribute("aria-label", d[1] + " Grad");
+      b.onclick = function () { if (isLocked()) return; onChange(d[0], vEl); }; row.appendChild(b);
+    });
+    st.appendChild(row); return st;
   }
   function fmt(v) { return String(v).replace("-", "−") + " °C"; }
 
   /* ---------- Aufgaben-Renderer ---------- */
   var R = {};
 
+  function fig(t, body) {
+    if (t.th) body.appendChild(el("div", "fig thfig", thermoSVG(t.th[0], t.th[1], t.th[2], true)));
+    else if (t.img) body.appendChild(el("div", "fig", P.img[t.img]));
+  }
   R.mc = function (t, body, api) {
-    if (t.img) body.appendChild(el("div", "fig", P.img[t.img]));
+    fig(t, body);
     var hasImg = t.opts.some(function (o) { return o.img; });
     var box = el("div", "opts" + (hasImg ? " img" : ""));
     var order = shuffle(t.opts.map(function (_, i) { return i; }));
@@ -326,7 +371,7 @@ h1{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.3rem);letter-spacin
   };
 
   R.tf = function (t, body, api) {
-    if (t.img) body.appendChild(el("div", "fig", P.img[t.img]));
+    fig(t, body);
     var box = el("div", "tf"); var ans = []; var rows = [];
     t.items.forEach(function (it, i) {
       var r = el("div", "tfrow"); r.appendChild(el("span", "t", it[0]));
@@ -342,6 +387,7 @@ h1{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.3rem);letter-spacin
   };
 
   R.match = function (t, body, api) {
+    fig(t, body);
     var m = el("div", "match"); var L = el("div", "col"), Rr = el("div", "col");
     var pairs = {}, active = null, n = 0; var lb = [], rb = [];
     t.left.forEach(function (x, i) {
@@ -374,6 +420,7 @@ h1{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.3rem);letter-spacin
   };
 
   R.cloze = function (t, body, api) {
+    fig(t, body);
     var parts = t.text.split(/\{(.+?)\}/); var answers = [], gaps = [], fill = [];
     var p = el("p", "cloze"); var active = null;
     parts.forEach(function (s, i) {
@@ -405,6 +452,7 @@ h1{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.3rem);letter-spacin
   };
 
   R.order = function (t, body, api) {
+    fig(t, body);
     var box = el("div", "olist"); var seq = []; var cards = [];
     body.appendChild(el("p", "sub", "Tippe die Sätze in der richtigen Reihenfolge an."));
     shuffle(t.items.map(function (_, i) { return i; })).forEach(function (i) {
@@ -423,6 +471,7 @@ h1{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.3rem);letter-spacin
   };
 
   R.sort = function (t, body, api) {
+    fig(t, body);
     var pool = el("div", "pool"); var buckets = el("div", "buckets"); var where = {}; var active = null; var chips = [];
     var bEls = t.buckets.map(function (name, bi) {
       var b = el("div", "bucket"); b.appendChild(el("h4", "", name));
@@ -447,32 +496,37 @@ h1{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.3rem);letter-spacin
   R.thermo = function (t, body, api) {
     var lo = t.lo, hi = t.hi; var box = el("div", "thermos"); var vals = [], ths = [];
     t.values.forEach(function (v, i) {
-      var th = el("div", "th", thermoSVG(v, lo, hi, true)); var st = el("div", "stepper");
-      var cur = t.start != null ? t.start : 20; vals[i] = null;
-      var vEl = el("span", "v", "?");
-      var mk = function (d, lab) { var b = el("button", "", lab); b.onclick = function () { if (api.locked()) return; cur = Math.max(lo, Math.min(hi, (vals[i] == null ? cur : vals[i]) + d)); vals[i] = cur; vEl.textContent = fmt(cur); api.ready(vals.every(function (x) { return x != null; })); }; return b; };
-      st.appendChild(mk(-5, "−5")); st.appendChild(mk(-1, "−")); st.appendChild(vEl); st.appendChild(mk(1, "+")); st.appendChild(mk(5, "+5"));
-      th.appendChild(st); ths.push(th); box.appendChild(th);
+      var th = el("div", "th"); th.appendChild(el("div", "badge2", "Thermometer " + String.fromCharCode(65 + i)));
+      th.appendChild(el("div", "", thermoSVG(v, lo, hi, true)));
+      vals[i] = null; var cur = 0;
+      th.appendChild(stepper(function (d, vEl) {
+        cur = Math.max(lo, Math.min(hi, (vals[i] == null ? 0 : cur) + d)); vals[i] = cur; vEl.textContent = fmt(cur);
+        api.ready(vals.every(function (x) { return x != null; }));
+      }, api.locked));
+      ths.push(th); box.appendChild(th);
     });
-    body.appendChild(el("p", "sub", "Stelle mit + und − die abgelesene Temperatur ein.")); body.appendChild(box);
-    api.max = t.values.length;
+    body.appendChild(el("p", "sub", "Lies genau ab: 1 kleiner Strich = 1 °C. Stelle deinen Wert mit den Knöpfen ein (Start bei 0 °C)."));
+    body.appendChild(box); api.max = t.values.length;
     api.check = function () { var p = 0; t.values.forEach(function (v, i) { var ok = vals[i] === v; if (ok) p++; ths[i].classList.add(ok ? "ok" : "bad"); if (!ok) ths[i].appendChild(el("div", "badge2", "richtig: " + fmt(v))); }); return p; };
   };
 
   R.setthermo = function (t, body, api) {
-    var lo = t.lo, hi = t.hi; var wrap = el("div", "setth"); var vals = [], boxes = [];
+    var lo = t.lo, hi = t.hi; var wrap = el("div", "thermos"); var vals = [], boxes = [];
     t.targets.forEach(function (target, i) {
       var th = el("div", "th"); th.appendChild(el("div", "badge2", "Stelle ein: " + fmt(target)));
-      var holder = el("div", "", thermoSVG(lo, lo, hi, true, t.col || "#C9553A")); th.appendChild(holder);
-      var r = el("input"); r.type = "range"; r.min = lo; r.max = hi; r.step = 1; r.value = lo; r.style.width = "140px";
-      var out = el("div", "badge2", fmt(lo));
-      r.oninput = function () { if (api.locked()) return; vals[i] = +r.value; holder.innerHTML = thermoSVG(+r.value, lo, hi, true, t.col); out.textContent = fmt(+r.value); api.ready(vals.filter(function (x) { return x != null; }).length === t.targets.length); };
-      r.setAttribute("aria-label", "Temperatur einstellen");
-      th.appendChild(r); th.appendChild(out); boxes.push(th); wrap.appendChild(th);
+      var cur = t.start != null ? t.start : 10;
+      var holder = el("div", "", thermoSVG(cur, lo, hi, true)); th.appendChild(holder);
+      vals[i] = null;
+      var st = stepper(function (d, vEl) {
+        cur = Math.max(lo, Math.min(hi, cur + d)); vals[i] = cur; holder.innerHTML = thermoSVG(cur, lo, hi, true);
+        api.ready(vals.every(function (x) { return x != null; }));
+      }, api.locked);
+      st.querySelector(".v").hidden = true;
+      th.appendChild(st); boxes.push(th); wrap.appendChild(th);
     });
-    body.appendChild(el("p", "sub", "Ziehe den Regler, bis die rote Säule bei der richtigen Zahl steht.")); body.appendChild(wrap);
-    api.max = t.targets.length;
-    api.check = function () { var p = 0; t.targets.forEach(function (v, i) { var ok = Math.abs((vals[i] == null ? 999 : vals[i]) - v) <= (t.tol || 0); if (ok) p++; boxes[i].classList.add(ok ? "ok" : "bad"); }); return p; };
+    body.appendChild(el("p", "sub", "Bewege die rote Säule mit den Knöpfen genau auf die richtige Zahl."));
+    body.appendChild(wrap); api.max = t.targets.length;
+    api.check = function () { var p = 0; t.targets.forEach(function (v, i) { var ok = vals[i] === v; if (ok) p++; boxes[i].classList.add(ok ? "ok" : "bad"); if (!ok) boxes[i].appendChild(el("div", "badge2", "richtig: " + fmt(v))); }); return p; };
   };
 
   /* Teilchen-Simulation (ohne Punkte) */
@@ -577,14 +631,10 @@ h1{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.3rem);letter-spacin
     function showRes() {
       var pct = total ? got / total : 1;
       var suns = pct >= .9 ? 3 : pct >= .6 ? 2 : pct >= .3 ? 1 : 0;
-      var nm = store.get("nt5tw_name") || "";
       score.hidden = true; res.hidden = false;
       res.innerHTML = '<div class="kicker">Geschafft · ' + label.replace(/^\S+\s/, "") + '</div><div class="sun">' + "☀️".repeat(suns) + "🌥️".repeat(3 - suns) + '</div><div class="big">' + got + " / " + total + " Punkte</div>" +
-        '<p><input class="nm" placeholder="Dein Vorname" value="' + nm.replace(/"/g, "") + '"> · ' + P.no + " " + label.replace(/^\S+\s/, "") + " · " + new Date().toLocaleDateString("de-DE") + "</p>" +
-        "<p>Mach einen Screenshot und zeige ihn deiner Lehrkraft.</p>" +
         '<div class="row"><button class="btn" type="button" onclick="location.reload()">Nochmal üben</button>' +
         (nextLabel ? '<button class="btn ghost nx" type="button">Weiter: ' + nextLabel + " ➜</button>" : "") + "</div>";
-      var inp = res.querySelector(".nm"); inp.oninput = function () { store.set("nt5tw_name", inp.value); };
       var nx = res.querySelector(".nx"); if (nx) nx.onclick = function () { secs[myTab + 1][0].click(); };
       var k2 = isTest ? "test" : "ueben"; var b = state[k2] || 0; if (got >= b) { state[k2] = got; state[k2 + "_t"] = total; store.set(key, state); }
     }

@@ -131,15 +131,28 @@ h1{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.3rem);letter-spacin
 .lockpage .pill{display:inline-block;text-decoration:none;margin-top:10px}
 @media (max-width:560px){.match{gap:8px}.mitem{font-size:15px;padding:8px}}
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+/* Thermometer exakt ablesbar */
+.thermos{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))!important}
+.th{display:flex;flex-direction:column;align-items:center;gap:6px}
+.th svg{width:170px!important;height:auto!important;max-height:none!important;background:transparent!important;border:0!important}
+.stepper{display:flex!important;flex-direction:column;align-items:center;gap:6px}
+.stepper .v{font-size:1.35rem!important;font-weight:900;min-width:0!important}
+.sbtns{display:flex;gap:6px}
+.sbtns button{min-width:40px;height:42px;border-radius:12px;border:2px solid var(--line);background:var(--card);font-weight:900;font-size:1rem;padding:0 6px}
+.sbtns button:active{background:var(--sel)}
+.thfig{max-width:190px!important}
+.stage .thfig svg{width:170px!important;margin:0 auto;max-height:none}
+.stage .fig.thfig{margin:0 auto}
 </style></head>
 <body data-uebung="2.3"><main class="wrap" id="app"></main>
-<script>window.PAGE = {"no": "2.3", "title": "Temperaturänderungen und ihre Folgen", "sub": "Ausdehnung und Teilchenmodell", "book": "S. 42–45", "tile": "ballon", "tasks": [{"type": "sim", "stars": 1, "q": "Ausprobieren: Ziehe den Regler von kalt nach warm. Beobachte die Teilchen!"}, {"type": "mc", "stars": 1, "q": "Die Flasche mit Luftballon steht in warmem Wasser. Was passiert mit dem Ballon?", "img": "ballon", "opts": [{"t": "Er wird größer."}, {"t": "Er wird kleiner."}, {"t": "Nichts."}], "a": 0, "why": "Die Luft in der Flasche dehnt sich beim Erwärmen aus."}, {"type": "sort", "stars": 2, "q": "Was passiert beim Erwärmen, was beim Abkühlen?", "buckets": ["Erwärmen 🔥", "Abkühlen ❄"], "items": [["Der Stoff dehnt sich aus.", 0], ["Die Teilchen bewegen sich schneller.", 0], ["Das Volumen wird kleiner.", 1], ["Der Stoff zieht sich zusammen.", 1], ["Die Teilchen brauchen mehr Platz.", 0], ["Die Teilchen bewegen sich langsamer.", 1]]}, {"type": "mc", "stars": 2, "q": "Wann hängt die Stromleitung stärker durch?", "img": "leitung", "opts": [{"t": "im Sommer"}, {"t": "im Winter"}], "a": 0, "why": "Im Sommer ist das Metall warm, es dehnt sich aus und wird länger."}, {"type": "order", "stars": 2, "q": "Der Sprinkler: Wie geht die Löschanlage an?", "items": ["Es brennt.", "Die Temperatur steigt.", "Die Flüssigkeit im Glasröhrchen erwärmt sich.", "Die Flüssigkeit dehnt sich aus und sprengt das Glasröhrchen.", "Das Löschwasser tritt aus."]}, {"type": "mc", "stars": 3, "q": "Warum haben Brücken Dehnungsfugen?", "img": "bruecke", "opts": [{"t": "Damit Regenwasser abfließt."}, {"t": "Damit sich die Brücke im Sommer ausdehnen kann, ohne kaputtzugehen."}, {"t": "Damit Autos langsamer fahren."}], "a": 1}, {"type": "mc", "stars": 3, "q": "Ein Tischtennisball hat eine Delle. Was hilft?", "opts": [{"t": "In den Kühlschrank legen."}, {"t": "In heißes Wasser legen."}, {"t": "Fest drücken."}], "a": 1, "why": "Die Luft im Ball wird warm und dehnt sich aus. Sie drückt die Delle heraus. (Heißes Wasser nur mit Erwachsenen!)"}], "img": {"ballon": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"25\" y=\"190\" width=\"150\" height=\"70\" rx=\"6\" fill=\"#CFE6F7\" stroke=\"#3B342C\" stroke-width=\"3\"/><path d=\"M74.5,240 L74.5,163.5 C74.5,146.5 89.8,142.25 89.8,125.25 L89.8,112.5 L110.2,112.5 L110.2,125.25 C110.2,142.25 125.5,146.5 125.5,163.5 L125.5,240 Z\" fill=\"#E3F1E6\" stroke=\"#3B342C\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M90,113 C80,95 95,88 100,80 C106,90 118,96 110,113 Z\" fill=\"#C9553A\" stroke=\"#3B342C\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"100\" y=\"287\" font-family=\"Nunito, DejaVu Sans, sans-serif\" font-weight=\"700\" font-size=\"18\" fill=\"#2F6FB0\" text-anchor=\"middle\">kaltes Wasser<\/text><rect x=\"225\" y=\"190\" width=\"150\" height=\"70\" rx=\"6\" fill=\"#F7D3C6\" stroke=\"#3B342C\" stroke-width=\"3\"/><path d=\"M274.5,240 L274.5,163.5 C274.5,146.5 289.8,142.25 289.8,125.25 L289.8,112.5 L310.2,112.5 L310.2,125.25 C310.2,142.25 325.5,146.5 325.5,163.5 L325.5,240 Z\" fill=\"#E3F1E6\" stroke=\"#3B342C\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><ellipse cx=\"300\" cy=\"62\" rx=\"44\" ry=\"50\" fill=\"#C9553A\" stroke=\"#3B342C\" stroke-width=\"2.5\"/><path d=\"M290,110 L310,110 L306,118 L294,118Z\" fill=\"#C9553A\" stroke=\"#3B342C\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M268,186 c-8,-10 8,-18 0,-28 c-8,-10 8,-18 0,-28\" fill=\"none\" stroke=\"#D99A88\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M286,186 c-8,-10 8,-18 0,-28 c-8,-10 8,-18 0,-28\" fill=\"none\" stroke=\"#D99A88\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M304,186 c-8,-10 8,-18 0,-28 c-8,-10 8,-18 0,-28\" fill=\"none\" stroke=\"#D99A88\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"300\" y=\"287\" font-family=\"Nunito, DejaVu Sans, sans-serif\" font-weight=\"700\" font-size=\"18\" fill=\"#C9553A\" text-anchor=\"middle\">warmes Wasser<\/text><\/svg>", "leitung": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"60.0\" y1=\"35.0\" x2=\"60.0\" y2=\"145.0\" stroke=\"#7A6B5A\" stroke-width=\"6\" stroke-linecap=\"round\"/><line x1=\"340.0\" y1=\"35.0\" x2=\"340.0\" y2=\"145.0\" stroke=\"#7A6B5A\" stroke-width=\"6\" stroke-linecap=\"round\"/><line x1=\"45.0\" y1=\"43.0\" x2=\"75.0\" y2=\"43.0\" stroke=\"#7A6B5A\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"325.0\" y1=\"43.0\" x2=\"355.0\" y2=\"43.0\" stroke=\"#7A6B5A\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M60,45 Q200,81 340,45\" fill=\"none\" stroke=\"#3B342C\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"200\" y=\"37\" font-family=\"Nunito, DejaVu Sans, sans-serif\" font-weight=\"700\" font-size=\"20\" fill=\"#2F6FB0\" text-anchor=\"middle\">Winter<\/text><text x=\"375\" y=\"85\" font-family=\"Nunito, DejaVu Sans, sans-serif\" font-weight=\"700\" font-size=\"26\" fill=\"#2F6FB0\" text-anchor=\"middle\">❄<\/text><line x1=\"30.0\" y1=\"147.0\" x2=\"370.0\" y2=\"147.0\" stroke=\"#9BBF7A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"60.0\" y1=\"180.0\" x2=\"60.0\" y2=\"290.0\" stroke=\"#7A6B5A\" stroke-width=\"6\" stroke-linecap=\"round\"/><line x1=\"340.0\" y1=\"180.0\" x2=\"340.0\" y2=\"290.0\" stroke=\"#7A6B5A\" stroke-width=\"6\" stroke-linecap=\"round\"/><line x1=\"45.0\" y1=\"188.0\" x2=\"75.0\" y2=\"188.0\" stroke=\"#7A6B5A\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"325.0\" y1=\"188.0\" x2=\"355.0\" y2=\"188.0\" stroke=\"#7A6B5A\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M60,190 Q200,300 340,190\" fill=\"none\" stroke=\"#3B342C\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"200\" y=\"182\" font-family=\"Nunito, DejaVu Sans, sans-serif\" font-weight=\"700\" font-size=\"20\" fill=\"#C9553A\" text-anchor=\"middle\">Sommer<\/text><text x=\"375\" y=\"230\" font-family=\"Nunito, DejaVu Sans, sans-serif\" font-weight=\"700\" font-size=\"26\" fill=\"#C9553A\" text-anchor=\"middle\">☀<\/text><line x1=\"30.0\" y1=\"292.0\" x2=\"370.0\" y2=\"292.0\" stroke=\"#9BBF7A\" stroke-width=\"3\" stroke-linecap=\"round\"/><\/svg>", "bruecke": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"200\" width=\"400\" height=\"100\" rx=\"0\" fill=\"#CFE6F7\" stroke=\"none\" stroke-width=\"0\"/><path d=\"M0,200 C60,190 120,210 200,200 C280,190 340,210 400,200\" fill=\"none\" stroke=\"#2F6FB0\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><rect x=\"20\" y=\"120\" width=\"172\" height=\"26\" rx=\"0\" fill=\"#C9C1B5\" stroke=\"#3B342C\" stroke-width=\"3\"/><rect x=\"208\" y=\"120\" width=\"172\" height=\"26\" rx=\"0\" fill=\"#C9C1B5\" stroke=\"#3B342C\" stroke-width=\"3\"/><rect x=\"60\" y=\"146\" width=\"30\" height=\"90\" rx=\"0\" fill=\"#A79E91\" stroke=\"#3B342C\" stroke-width=\"3\"/><rect x=\"310\" y=\"146\" width=\"30\" height=\"90\" rx=\"0\" fill=\"#A79E91\" stroke=\"#3B342C\" stroke-width=\"3\"/><path d=\"M192,120 l8,6 l-8,6 l8,6 l-8,6\" fill=\"none\" stroke=\"#3B342C\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M208,120 l-8,6 l8,6 l-8,6 l8,6\" fill=\"none\" stroke=\"#3B342C\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"200\" cy=\"133\" r=\"34\" fill=\"none\" stroke=\"#C9553A\" stroke-width=\"3\"/><line x1=\"120.0\" y1=\"100.0\" x2=\"180.0\" y2=\"100.0\" stroke=\"#C9553A\" stroke-width=\"4\" stroke-linecap=\"round\"/><polygon points=\"180.0,100.0 169.2,105.2 169.2,94.8\" fill=\"#C9553A\" stroke=\"#C9553A\" stroke-width=\"2\" stroke-linejoin=\"round\"/><line x1=\"280.0\" y1=\"100.0\" x2=\"220.0\" y2=\"100.0\" stroke=\"#C9553A\" stroke-width=\"4\" stroke-linecap=\"round\"/><polygon points=\"220.0,100.0 230.8,94.8 230.8,105.2\" fill=\"#C9553A\" stroke=\"#C9553A\" stroke-width=\"2\" stroke-linejoin=\"round\"/><text x=\"200\" y=\"70\" font-family=\"Nunito, DejaVu Sans, sans-serif\" font-weight=\"700\" font-size=\"22\" fill=\"#C9553A\" text-anchor=\"middle\">Dehnungsfuge<\/text><path d=\"M110,116 a14,7 0 0 1 28,0 z\" fill=\"#E4573D\" stroke=\"#3B342C\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><rect x=\"108\" y=\"112\" width=\"32\" height=\"8\" rx=\"3\" fill=\"#6B6B6B\" stroke=\"#3B342C\" stroke-width=\"1.5\"/><\/svg>"}, "film": {"t": "Wenn Türme wachsen", "url": "https://www.planet-schule.de/schwerpunkt/achtung-experiment/wenn-tuerme-wachsen-film-100.html", "d": "Wird ein 139 m hoher Stahlturm in der Sommersonne größer? Thermometer und ein Messgerät finden es heraus."}, "color": "#2F6FB0", "test": [{"type": "mc", "q": "Was passiert mit den meisten Stoffen beim Erwärmen?", "opts": [{"t": "Sie dehnen sich aus."}, {"t": "Sie ziehen sich zusammen."}, {"t": "Nichts."}], "a": 0, "why": ""}, {"type": "mc", "q": "Wie bewegen sich die Teilchen, wenn ein Stoff wärmer wird?", "opts": [{"t": "langsamer"}, {"t": "schneller"}, {"t": "gar nicht"}], "a": 1, "why": ""}, {"type": "mc", "q": "Warum haben Brücken Dehnungsfugen?", "opts": [{"t": "damit Regen abfließt"}, {"t": "damit sich die Brücke im Sommer ausdehnen kann"}, {"t": "damit Autos bremsen"}], "a": 1, "why": ""}, {"type": "mc", "q": "Was passiert beim Abkühlen?", "opts": [{"t": "Der Stoff dehnt sich aus."}, {"t": "Der Stoff zieht sich zusammen."}, {"t": "Der Stoff wird schwerer."}], "a": 1, "why": ""}]};</script>
+<script>window.PAGE = {"no": "2.3", "title": "Temperaturänderungen und ihre Folgen", "sub": "Ausdehnung und Teilchenmodell", "book": "S. 42–45", "tasks": [{"type": "mc", "img": "ballon", "q": "Eine Flasche mit Luftballon steht in heißem Wasser. Was beobachtest du?", "opts": [{"t": "Der Ballon bläst sich auf."}, {"t": "Der Ballon wird schlaff."}, {"t": "Nichts passiert."}], "a": 0}, {"type": "mc", "img": "ballon", "q": "Warum bläst sich der Ballon auf?", "opts": [{"t": "Die Luft in der Flasche wird warm und dehnt sich aus. Sie braucht mehr Platz."}, {"t": "Heißes Wasser läuft in den Ballon."}, {"t": "Der Ballon wird durch die Wärme weicher."}], "a": 0}, {"type": "sim", "q": "Ausprobieren: So sieht es im Inneren eines Stoffes aus. Ziehe den Regler von kalt nach warm und beobachte die Teilchen."}, {"type": "sort", "q": "Was passiert beim Erwärmen, was beim Abkühlen?", "buckets": ["beim Erwärmen 🔥", "beim Abkühlen ❄"], "items": [["Die Teilchen bewegen sich schneller.", 0], ["Die Teilchen brauchen mehr Platz.", 0], ["Der Stoff dehnt sich aus.", 0], ["Die Teilchen bewegen sich langsamer.", 1], ["Die Teilchen rücken näher zusammen.", 1], ["Der Stoff zieht sich zusammen.", 1]]}, {"type": "mc", "q": "Erinnerst du dich an das Flüssigkeitsthermometer? Warum steigt die rote Säule, wenn es wärmer wird?", "opts": [{"t": "Die Flüssigkeit dehnt sich aus und braucht mehr Platz im Röhrchen."}, {"t": "Es kommt neue Flüssigkeit dazu."}, {"t": "Die Flüssigkeit wird leichter und schwimmt nach oben."}], "a": 0}, {"type": "mc", "img": "leitung", "q": "Stromleitungen sind aus Metall. Wann hängen sie stärker durch?", "opts": [{"t": "im heißen Sommer"}, {"t": "im kalten Winter"}], "a": 0, "why": "Im Sommer ist das Metall warm. Es dehnt sich aus und wird etwas länger."}, {"type": "mc", "img": "bruecke", "q": "Warum haben Brücken Dehnungsfugen?", "opts": [{"t": "Damit sich die Brücke im Sommer ausdehnen kann, ohne kaputtzugehen."}, {"t": "Damit Regenwasser abfließen kann."}, {"t": "Damit Autos langsamer fahren."}], "a": 0}], "img": {"leitung": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"60.0\" y1=\"35.0\" x2=\"60.0\" y2=\"145.0\" stroke=\"#7A6B5A\" stroke-width=\"6\" stroke-linecap=\"round\"/><line x1=\"340.0\" y1=\"35.0\" x2=\"340.0\" y2=\"145.0\" stroke=\"#7A6B5A\" stroke-width=\"6\" stroke-linecap=\"round\"/><line x1=\"45.0\" y1=\"43.0\" x2=\"75.0\" y2=\"43.0\" stroke=\"#7A6B5A\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"325.0\" y1=\"43.0\" x2=\"355.0\" y2=\"43.0\" stroke=\"#7A6B5A\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M60,45 Q200,81 340,45\" fill=\"none\" stroke=\"#3B342C\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"200\" y=\"37\" font-family=\"Nunito, DejaVu Sans, sans-serif\" font-weight=\"700\" font-size=\"20\" fill=\"#2F6FB0\" text-anchor=\"middle\">Winter<\/text><text x=\"375\" y=\"85\" font-family=\"Nunito, DejaVu Sans, sans-serif\" font-weight=\"700\" font-size=\"26\" fill=\"#2F6FB0\" text-anchor=\"middle\">❄<\/text><line x1=\"30.0\" y1=\"147.0\" x2=\"370.0\" y2=\"147.0\" stroke=\"#9BBF7A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"60.0\" y1=\"180.0\" x2=\"60.0\" y2=\"290.0\" stroke=\"#7A6B5A\" stroke-width=\"6\" stroke-linecap=\"round\"/><line x1=\"340.0\" y1=\"180.0\" x2=\"340.0\" y2=\"290.0\" stroke=\"#7A6B5A\" stroke-width=\"6\" stroke-linecap=\"round\"/><line x1=\"45.0\" y1=\"188.0\" x2=\"75.0\" y2=\"188.0\" stroke=\"#7A6B5A\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"325.0\" y1=\"188.0\" x2=\"355.0\" y2=\"188.0\" stroke=\"#7A6B5A\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M60,190 Q200,300 340,190\" fill=\"none\" stroke=\"#3B342C\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"200\" y=\"182\" font-family=\"Nunito, DejaVu Sans, sans-serif\" font-weight=\"700\" font-size=\"20\" fill=\"#C9553A\" text-anchor=\"middle\">Sommer<\/text><text x=\"375\" y=\"230\" font-family=\"Nunito, DejaVu Sans, sans-serif\" font-weight=\"700\" font-size=\"26\" fill=\"#C9553A\" text-anchor=\"middle\">☀<\/text><line x1=\"30.0\" y1=\"292.0\" x2=\"370.0\" y2=\"292.0\" stroke=\"#9BBF7A\" stroke-width=\"3\" stroke-linecap=\"round\"/><\/svg>", "ballon": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"25\" y=\"190\" width=\"150\" height=\"70\" rx=\"6\" fill=\"#CFE6F7\" stroke=\"#3B342C\" stroke-width=\"3\"/><path d=\"M74.5,240 L74.5,163.5 C74.5,146.5 89.8,142.25 89.8,125.25 L89.8,112.5 L110.2,112.5 L110.2,125.25 C110.2,142.25 125.5,146.5 125.5,163.5 L125.5,240 Z\" fill=\"#E3F1E6\" stroke=\"#3B342C\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M90,113 C80,95 95,88 100,80 C106,90 118,96 110,113 Z\" fill=\"#C9553A\" stroke=\"#3B342C\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"100\" y=\"287\" font-family=\"Nunito, DejaVu Sans, sans-serif\" font-weight=\"700\" font-size=\"18\" fill=\"#2F6FB0\" text-anchor=\"middle\">kaltes Wasser<\/text><rect x=\"225\" y=\"190\" width=\"150\" height=\"70\" rx=\"6\" fill=\"#F7D3C6\" stroke=\"#3B342C\" stroke-width=\"3\"/><path d=\"M274.5,240 L274.5,163.5 C274.5,146.5 289.8,142.25 289.8,125.25 L289.8,112.5 L310.2,112.5 L310.2,125.25 C310.2,142.25 325.5,146.5 325.5,163.5 L325.5,240 Z\" fill=\"#E3F1E6\" stroke=\"#3B342C\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><ellipse cx=\"300\" cy=\"62\" rx=\"44\" ry=\"50\" fill=\"#C9553A\" stroke=\"#3B342C\" stroke-width=\"2.5\"/><path d=\"M290,110 L310,110 L306,118 L294,118Z\" fill=\"#C9553A\" stroke=\"#3B342C\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M268,186 c-8,-10 8,-18 0,-28 c-8,-10 8,-18 0,-28\" fill=\"none\" stroke=\"#D99A88\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M286,186 c-8,-10 8,-18 0,-28 c-8,-10 8,-18 0,-28\" fill=\"none\" stroke=\"#D99A88\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M304,186 c-8,-10 8,-18 0,-28 c-8,-10 8,-18 0,-28\" fill=\"none\" stroke=\"#D99A88\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"300\" y=\"287\" font-family=\"Nunito, DejaVu Sans, sans-serif\" font-weight=\"700\" font-size=\"18\" fill=\"#C9553A\" text-anchor=\"middle\">warmes Wasser<\/text><\/svg>", "bruecke": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"200\" width=\"400\" height=\"100\" rx=\"0\" fill=\"#CFE6F7\" stroke=\"none\" stroke-width=\"0\"/><path d=\"M0,200 C60,190 120,210 200,200 C280,190 340,210 400,200\" fill=\"none\" stroke=\"#2F6FB0\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><rect x=\"20\" y=\"120\" width=\"172\" height=\"26\" rx=\"0\" fill=\"#C9C1B5\" stroke=\"#3B342C\" stroke-width=\"3\"/><rect x=\"208\" y=\"120\" width=\"172\" height=\"26\" rx=\"0\" fill=\"#C9C1B5\" stroke=\"#3B342C\" stroke-width=\"3\"/><rect x=\"60\" y=\"146\" width=\"30\" height=\"90\" rx=\"0\" fill=\"#A79E91\" stroke=\"#3B342C\" stroke-width=\"3\"/><rect x=\"310\" y=\"146\" width=\"30\" height=\"90\" rx=\"0\" fill=\"#A79E91\" stroke=\"#3B342C\" stroke-width=\"3\"/><path d=\"M192,120 l8,6 l-8,6 l8,6 l-8,6\" fill=\"none\" stroke=\"#3B342C\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M208,120 l-8,6 l8,6 l-8,6 l8,6\" fill=\"none\" stroke=\"#3B342C\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"200\" cy=\"133\" r=\"34\" fill=\"none\" stroke=\"#C9553A\" stroke-width=\"3\"/><line x1=\"120.0\" y1=\"100.0\" x2=\"180.0\" y2=\"100.0\" stroke=\"#C9553A\" stroke-width=\"4\" stroke-linecap=\"round\"/><polygon points=\"180.0,100.0 169.2,105.2 169.2,94.8\" fill=\"#C9553A\" stroke=\"#C9553A\" stroke-width=\"2\" stroke-linejoin=\"round\"/><line x1=\"280.0\" y1=\"100.0\" x2=\"220.0\" y2=\"100.0\" stroke=\"#C9553A\" stroke-width=\"4\" stroke-linecap=\"round\"/><polygon points=\"220.0,100.0 230.8,94.8 230.8,105.2\" fill=\"#C9553A\" stroke=\"#C9553A\" stroke-width=\"2\" stroke-linejoin=\"round\"/><text x=\"200\" y=\"70\" font-family=\"Nunito, DejaVu Sans, sans-serif\" font-weight=\"700\" font-size=\"22\" fill=\"#C9553A\" text-anchor=\"middle\">Dehnungsfuge<\/text><path d=\"M110,116 a14,7 0 0 1 28,0 z\" fill=\"#E4573D\" stroke=\"#3B342C\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><rect x=\"108\" y=\"112\" width=\"32\" height=\"8\" rx=\"3\" fill=\"#6B6B6B\" stroke=\"#3B342C\" stroke-width=\"1.5\"/><\/svg>"}, "film": {"t": "Wenn Türme wachsen", "url": "https://www.planet-schule.de/schwerpunkt/achtung-experiment/wenn-tuerme-wachsen-film-100.html", "d": "Wird ein 139 m hoher Stahlturm in der Sommersonne größer? Thermometer und ein Messgerät finden es heraus."}, "color": "#2F6FB0", "test": [{"type": "mc", "q": "Was passiert mit den Teilchen, wenn ein Stoff warm wird?", "opts": [{"t": "Sie bewegen sich schneller und brauchen mehr Platz."}, {"t": "Jedes Teilchen wird größer."}, {"t": "Es kommen neue Teilchen dazu."}], "a": 0, "why": "Die Teilchen selbst werden nicht größer – sie bewegen sich nur stärker und brauchen deshalb mehr Platz."}, {"type": "mc", "q": "Ein Marmeladenglas geht nicht auf. Was hilft?", "opts": [{"t": "Den Metalldeckel kurz unter heißes Wasser halten – er dehnt sich aus."}, {"t": "Das Glas in den Kühlschrank stellen."}, {"t": "Das Glas schütteln."}], "a": 0, "why": ""}, {"type": "tf", "q": "Richtig oder falsch?", "items": [["Im Sommer sind Eisenbahnschienen etwas länger als im Winter.", true], ["Beim Abkühlen dehnt sich ein Stoff aus.", false]]}]};</script>
 <script>/* Freigabe der Übungen durch die Lehrkraft.
    Zustand liegt im Gerät (localStorage) und kann per Link/QR an alle iPads verteilt werden:
    index.html?frei=2.1,2.2&t=<Zeitstempel>   (frei=- bedeutet: alles gesperrt)  */
 (function () {
   var ALL = ["2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7"];
-  var KEY = "nt5tw_freigabe", PIN = "5555";
+  var KEY = "nt5tw_freigabe";
+  var PIN = (typeof LEHRERCODE !== "undefined" ? String(LEHRERCODE) : "5555");
   function load() {
     try { var s = JSON.parse(localStorage.getItem(KEY)); if (s && s.open) return s; } catch (e) {}
     return { open: ALL.slice(), t: 0 };            // Standard: alles offen
@@ -210,16 +223,31 @@ h1{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.3rem);letter-spacin
   document.getElementById("pin").addEventListener("keydown", function (e) { if (e.key === "Enter") tryPin(); });
 
   function link() {
-    var base = location.href.split("?")[0].split("#")[0];
+    var base = /^https?:/.test(location.protocol) ? location.href.split("?")[0].split("#")[0]
+             : (typeof ADRESSE !== "undefined" ? ADRESSE : location.href.split("?")[0]);
     return base + "?frei=" + (st.open.length ? st.open.join(",") : "-") + "&t=" + st.t;
   }
+  function qrSvg(text) {
+    try { var q = qrcode(0, "M"); q.addData(text); q.make(); return q.createSvgTag({ cellSize: 6, margin: 2, scalable: true }); }
+    catch (e) { return "<p>QR-Code konnte nicht erzeugt werden.</p>"; }
+  }
+  function openList() { return st.open.length ? st.open.join(" · ") : "keine (alles gesperrt)"; }
   function update() {
     st.t = Date.now(); save(st); paint();
     var l = link(); document.getElementById("tlink").value = l;
-    var qr = document.getElementById("qr"); qr.innerHTML = "";
-    if (window.QRCode) new QRCode(qr, { text: l, width: 220, height: 220, correctLevel: QRCode.CorrectLevel.M });
-    else qr.textContent = "(QR-Code braucht Internet)";
+    document.getElementById("qr").innerHTML = qrSvg(l);
+    document.getElementById("qrinfo").textContent = "Offen: " + openList();
+    var big = document.getElementById("qrbig");
+    if (!big.hidden) showBig();
   }
+  function showBig() {
+    var big = document.getElementById("qrbig");
+    big.querySelector(".qrcode").innerHTML = qrSvg(link());
+    big.querySelector(".qropen").textContent = "Offen: " + openList();
+    big.hidden = false;
+  }
+  document.getElementById("qrshow").onclick = showBig;
+  document.getElementById("qrbig").onclick = function () { this.hidden = true; };
   function buildList() {
     var box = document.getElementById("tlist"); box.innerHTML = "";
     document.querySelectorAll("a.card[data-no]").forEach(function (a) {
@@ -267,31 +295,48 @@ h1{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.3rem);letter-spacin
     } catch (e) {}
   }
 
-  /* ---------- Thermometer-SVG ---------- */
+  /* ---------- Thermometer-SVG: 1 kleiner Strich = 1 °C, mittlerer Strich = 5 °C, Zahl alle 10 °C ---------- */
   function thermoSVG(val, lo, hi, show, col) {
-    col = col || "#C9553A";
-    var top = 20, bot = 250;
-    function y(v) { return bot - (v - lo) / (hi - lo) * (bot - top); }
-    var s = '<svg viewBox="0 0 120 300"><rect x="30" y="5" width="60" height="290" rx="10" fill="#fff" stroke="#3B342C" stroke-width="2"/>' +
-      '<rect x="54" y="' + (top - 6) + '" width="12" height="' + (bot - top + 18) + '" rx="6" fill="#EEF3F6" stroke="#3B342C" stroke-width="1.6"/>';
-    for (var v = lo; v <= hi; v += 2) {
-      var big = v % 10 === 0;
-      s += '<line x1="66" x2="' + (66 + (big ? 12 : 6)) + '" y1="' + y(v) + '" y2="' + y(v) + '" stroke="#3B342C" stroke-width="' + (big ? 1.6 : 1) + '"/>';
-      if (big) s += '<text x="50" y="' + (y(v) + 4) + '" font-size="12" font-weight="700" text-anchor="end" fill="#3B342C">' + String(v).replace("-", "−") + '</text>';
+    col = col || "#C0573E";
+    var ppd = Math.max(5, Math.min(9, 330 / (hi - lo)));       // Pixel pro Grad
+    var top = 34, bot = top + (hi - lo) * ppd, W = 170, H = bot + 62;
+    function y(v) { return (bot - (v - lo) * ppd).toFixed(1); }
+    var s = '<svg viewBox="0 0 ' + W + " " + H + '" width="' + W + '" role="img" aria-label="Thermometer">' +
+      '<rect x="22" y="6" width="126" height="' + (H - 12) + '" rx="14" fill="#fff" stroke="#3F3A34" stroke-width="2"/>' +
+      '<rect x="72" y="' + (top - 12) + '" width="18" height="' + (bot - top + 26) + '" rx="9" fill="#EEF3F6" stroke="#3F3A34" stroke-width="1.8"/>';
+    for (var v = lo; v <= hi; v++) {
+      var ten = v % 10 === 0, five = !ten && v % 5 === 0;
+      var len = ten ? 26 : five ? 17 : 9, sw = ten ? 2.2 : five ? 1.6 : 1;
+      s += '<line x1="92" x2="' + (92 + len) + '" y1="' + y(v) + '" y2="' + y(v) + '" stroke="#3F3A34" stroke-width="' + sw + '"/>';
+      if (ten) s += '<text x="66" y="' + (+y(v) + 5.5) + '" font-size="16" font-weight="800" text-anchor="end" fill="#3F3A34" font-family="Nunito,Arial,sans-serif">' + String(v).replace("-", "−") + "</text>";
     }
+    if (lo < 0 && hi > 0) s += '<line x1="30" x2="70" y1="' + y(0) + '" y2="' + y(0) + '" stroke="#2F6FB0" stroke-width="1.2" stroke-dasharray="3 3"/>';
     var vv = show ? val : lo;
-    s += '<rect class="col" x="57" y="' + y(vv) + '" width="6" height="' + (bot + 14 - y(vv)) + '" fill="' + col + '"/>';
-    s += '<circle cx="60" cy="268" r="12" fill="' + col + '" stroke="#3B342C" stroke-width="1.6"/>';
-    s += '<text x="80" y="18" font-size="12" font-weight="700" fill="#3B342C">°C</text></svg>';
+    s += '<rect x="76" y="' + y(vv) + '" width="10" height="' + (bot + 30 - y(vv)) + '" fill="' + col + '"/>';
+    s += '<circle cx="81" cy="' + (bot + 30) + '" r="17" fill="' + col + '" stroke="#3F3A34" stroke-width="1.8"/>';
+    s += '<text x="124" y="' + (top - 14) + '" font-size="15" font-weight="800" fill="#3F3A34" font-family="Nunito,Arial,sans-serif">°C</text></svg>';
     return s;
+  }
+  function stepper(onChange, isLocked) {
+    var st = el("div", "stepper"); var vEl = el("div", "v", "?"); st.appendChild(vEl);
+    var row = el("div", "sbtns");
+    [[-10, "−10"], [-1, "−1"], [1, "+1"], [10, "+10"]].forEach(function (d) {
+      var b = el("button", "", d[1]); b.type = "button"; b.setAttribute("aria-label", d[1] + " Grad");
+      b.onclick = function () { if (isLocked()) return; onChange(d[0], vEl); }; row.appendChild(b);
+    });
+    st.appendChild(row); return st;
   }
   function fmt(v) { return String(v).replace("-", "−") + " °C"; }
 
   /* ---------- Aufgaben-Renderer ---------- */
   var R = {};
 
+  function fig(t, body) {
+    if (t.th) body.appendChild(el("div", "fig thfig", thermoSVG(t.th[0], t.th[1], t.th[2], true)));
+    else if (t.img) body.appendChild(el("div", "fig", P.img[t.img]));
+  }
   R.mc = function (t, body, api) {
-    if (t.img) body.appendChild(el("div", "fig", P.img[t.img]));
+    fig(t, body);
     var hasImg = t.opts.some(function (o) { return o.img; });
     var box = el("div", "opts" + (hasImg ? " img" : ""));
     var order = shuffle(t.opts.map(function (_, i) { return i; }));
@@ -326,7 +371,7 @@ h1{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.3rem);letter-spacin
   };
 
   R.tf = function (t, body, api) {
-    if (t.img) body.appendChild(el("div", "fig", P.img[t.img]));
+    fig(t, body);
     var box = el("div", "tf"); var ans = []; var rows = [];
     t.items.forEach(function (it, i) {
       var r = el("div", "tfrow"); r.appendChild(el("span", "t", it[0]));
@@ -342,6 +387,7 @@ h1{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.3rem);letter-spacin
   };
 
   R.match = function (t, body, api) {
+    fig(t, body);
     var m = el("div", "match"); var L = el("div", "col"), Rr = el("div", "col");
     var pairs = {}, active = null, n = 0; var lb = [], rb = [];
     t.left.forEach(function (x, i) {
@@ -374,6 +420,7 @@ h1{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.3rem);letter-spacin
   };
 
   R.cloze = function (t, body, api) {
+    fig(t, body);
     var parts = t.text.split(/\{(.+?)\}/); var answers = [], gaps = [], fill = [];
     var p = el("p", "cloze"); var active = null;
     parts.forEach(function (s, i) {
@@ -405,6 +452,7 @@ h1{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.3rem);letter-spacin
   };
 
   R.order = function (t, body, api) {
+    fig(t, body);
     var box = el("div", "olist"); var seq = []; var cards = [];
     body.appendChild(el("p", "sub", "Tippe die Sätze in der richtigen Reihenfolge an."));
     shuffle(t.items.map(function (_, i) { return i; })).forEach(function (i) {
@@ -423,6 +471,7 @@ h1{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.3rem);letter-spacin
   };
 
   R.sort = function (t, body, api) {
+    fig(t, body);
     var pool = el("div", "pool"); var buckets = el("div", "buckets"); var where = {}; var active = null; var chips = [];
     var bEls = t.buckets.map(function (name, bi) {
       var b = el("div", "bucket"); b.appendChild(el("h4", "", name));
@@ -447,32 +496,37 @@ h1{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.3rem);letter-spacin
   R.thermo = function (t, body, api) {
     var lo = t.lo, hi = t.hi; var box = el("div", "thermos"); var vals = [], ths = [];
     t.values.forEach(function (v, i) {
-      var th = el("div", "th", thermoSVG(v, lo, hi, true)); var st = el("div", "stepper");
-      var cur = t.start != null ? t.start : 20; vals[i] = null;
-      var vEl = el("span", "v", "?");
-      var mk = function (d, lab) { var b = el("button", "", lab); b.onclick = function () { if (api.locked()) return; cur = Math.max(lo, Math.min(hi, (vals[i] == null ? cur : vals[i]) + d)); vals[i] = cur; vEl.textContent = fmt(cur); api.ready(vals.every(function (x) { return x != null; })); }; return b; };
-      st.appendChild(mk(-5, "−5")); st.appendChild(mk(-1, "−")); st.appendChild(vEl); st.appendChild(mk(1, "+")); st.appendChild(mk(5, "+5"));
-      th.appendChild(st); ths.push(th); box.appendChild(th);
+      var th = el("div", "th"); th.appendChild(el("div", "badge2", "Thermometer " + String.fromCharCode(65 + i)));
+      th.appendChild(el("div", "", thermoSVG(v, lo, hi, true)));
+      vals[i] = null; var cur = 0;
+      th.appendChild(stepper(function (d, vEl) {
+        cur = Math.max(lo, Math.min(hi, (vals[i] == null ? 0 : cur) + d)); vals[i] = cur; vEl.textContent = fmt(cur);
+        api.ready(vals.every(function (x) { return x != null; }));
+      }, api.locked));
+      ths.push(th); box.appendChild(th);
     });
-    body.appendChild(el("p", "sub", "Stelle mit + und − die abgelesene Temperatur ein.")); body.appendChild(box);
-    api.max = t.values.length;
+    body.appendChild(el("p", "sub", "Lies genau ab: 1 kleiner Strich = 1 °C. Stelle deinen Wert mit den Knöpfen ein (Start bei 0 °C)."));
+    body.appendChild(box); api.max = t.values.length;
     api.check = function () { var p = 0; t.values.forEach(function (v, i) { var ok = vals[i] === v; if (ok) p++; ths[i].classList.add(ok ? "ok" : "bad"); if (!ok) ths[i].appendChild(el("div", "badge2", "richtig: " + fmt(v))); }); return p; };
   };
 
   R.setthermo = function (t, body, api) {
-    var lo = t.lo, hi = t.hi; var wrap = el("div", "setth"); var vals = [], boxes = [];
+    var lo = t.lo, hi = t.hi; var wrap = el("div", "thermos"); var vals = [], boxes = [];
     t.targets.forEach(function (target, i) {
       var th = el("div", "th"); th.appendChild(el("div", "badge2", "Stelle ein: " + fmt(target)));
-      var holder = el("div", "", thermoSVG(lo, lo, hi, true, t.col || "#C9553A")); th.appendChild(holder);
-      var r = el("input"); r.type = "range"; r.min = lo; r.max = hi; r.step = 1; r.value = lo; r.style.width = "140px";
-      var out = el("div", "badge2", fmt(lo));
-      r.oninput = function () { if (api.locked()) return; vals[i] = +r.value; holder.innerHTML = thermoSVG(+r.value, lo, hi, true, t.col); out.textContent = fmt(+r.value); api.ready(vals.filter(function (x) { return x != null; }).length === t.targets.length); };
-      r.setAttribute("aria-label", "Temperatur einstellen");
-      th.appendChild(r); th.appendChild(out); boxes.push(th); wrap.appendChild(th);
+      var cur = t.start != null ? t.start : 10;
+      var holder = el("div", "", thermoSVG(cur, lo, hi, true)); th.appendChild(holder);
+      vals[i] = null;
+      var st = stepper(function (d, vEl) {
+        cur = Math.max(lo, Math.min(hi, cur + d)); vals[i] = cur; holder.innerHTML = thermoSVG(cur, lo, hi, true);
+        api.ready(vals.every(function (x) { return x != null; }));
+      }, api.locked);
+      st.querySelector(".v").hidden = true;
+      th.appendChild(st); boxes.push(th); wrap.appendChild(th);
     });
-    body.appendChild(el("p", "sub", "Ziehe den Regler, bis die rote Säule bei der richtigen Zahl steht.")); body.appendChild(wrap);
-    api.max = t.targets.length;
-    api.check = function () { var p = 0; t.targets.forEach(function (v, i) { var ok = Math.abs((vals[i] == null ? 999 : vals[i]) - v) <= (t.tol || 0); if (ok) p++; boxes[i].classList.add(ok ? "ok" : "bad"); }); return p; };
+    body.appendChild(el("p", "sub", "Bewege die rote Säule mit den Knöpfen genau auf die richtige Zahl."));
+    body.appendChild(wrap); api.max = t.targets.length;
+    api.check = function () { var p = 0; t.targets.forEach(function (v, i) { var ok = vals[i] === v; if (ok) p++; boxes[i].classList.add(ok ? "ok" : "bad"); if (!ok) boxes[i].appendChild(el("div", "badge2", "richtig: " + fmt(v))); }); return p; };
   };
 
   /* Teilchen-Simulation (ohne Punkte) */
@@ -577,14 +631,10 @@ h1{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.3rem);letter-spacin
     function showRes() {
       var pct = total ? got / total : 1;
       var suns = pct >= .9 ? 3 : pct >= .6 ? 2 : pct >= .3 ? 1 : 0;
-      var nm = store.get("nt5tw_name") || "";
       score.hidden = true; res.hidden = false;
       res.innerHTML = '<div class="kicker">Geschafft · ' + label.replace(/^\S+\s/, "") + '</div><div class="sun">' + "☀️".repeat(suns) + "🌥️".repeat(3 - suns) + '</div><div class="big">' + got + " / " + total + " Punkte</div>" +
-        '<p><input class="nm" placeholder="Dein Vorname" value="' + nm.replace(/"/g, "") + '"> · ' + P.no + " " + label.replace(/^\S+\s/, "") + " · " + new Date().toLocaleDateString("de-DE") + "</p>" +
-        "<p>Mach einen Screenshot und zeige ihn deiner Lehrkraft.</p>" +
         '<div class="row"><button class="btn" type="button" onclick="location.reload()">Nochmal üben</button>' +
         (nextLabel ? '<button class="btn ghost nx" type="button">Weiter: ' + nextLabel + " ➜</button>" : "") + "</div>";
-      var inp = res.querySelector(".nm"); inp.oninput = function () { store.set("nt5tw_name", inp.value); };
       var nx = res.querySelector(".nx"); if (nx) nx.onclick = function () { secs[myTab + 1][0].click(); };
       var k2 = isTest ? "test" : "ueben"; var b = state[k2] || 0; if (got >= b) { state[k2] = got; state[k2 + "_t"] = total; store.set(key, state); }
     }
